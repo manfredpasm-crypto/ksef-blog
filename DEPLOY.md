@@ -1,74 +1,42 @@
-# 🚀 Wdrożenie KSeF Blog na GitHub Pages
+# Deployment - KSeF Blog
 
-## Krok 1: Utwórz repozytorium na GitHub
+## Krok 1: Stwórz repozytorium GitHub
 
 1. Wejdź na https://github.com/new
-2. **Repository name:** `ksef-blog`
-3. **Visibility:** Public (darmowe GitHub Pages)
-4. **Initialize:** NIE zaznaczaj (mamy już lokalne repo)
-5. Kliknij **Create repository**
+2. Nazwa repozytorium: `ksef-blog`
+3. Ustaw jako **Public**
+4. Kliknij **Create repository**
 
-## Krok 2: Podłącz lokalne repozytorium
-
-Skopiuj poniższe komendy i wklej do terminala (w folderze ksef-blog):
+## Krok 2: Podłącz lokalne repo do GitHub
 
 ```bash
 cd /home/stan/.openclaw/workspace/ksef-blog
-
-# Dodaj zdalne repozytorium
 git remote add origin https://github.com/TWOJ_USERNAME/ksef-blog.git
-
-# Wypchnij kod
 git branch -M main
 git push -u origin main
 ```
 
 ## Krok 3: Włącz GitHub Pages
 
-1. W repozytorium na GitHub: **Settings** → **Pages**
-2. **Source:** Deploy from a branch
-3. **Branch:** main / root
+1. W repozytorium GitHub → **Settings** → **Pages**
+2. **Source**: Deploy from a branch
+3. **Branch**: main / root
 4. Kliknij **Save**
 
-## Krok 4: Poczekaj na wdrożenie
+## Krok 4: Poczekaj 2-5 minut
 
-- GitHub zbuduje stronę w ciągu 1-2 minut
-- Adres: `https://TWOJ_USERNAME.github.io/ksef-blog/`
+Blog będzie dostępny pod:
+`https://TWOJ_USERNAME.github.io/ksef-blog`
 
-## Krok 5: Własna domena (opcjonalnie)
+## Automatyczne publikowanie nowych artykułów
 
-Jeśli chcesz użyć `ksef-blog.pl`:
+1. Writer pisze artykuł w `_posts/`
+2. Developer commituje i pushuje na GitHub
+3. GitHub Pages automatycznie publikuje (30 sekund)
 
-1. Kup domenę (np. na OVH, nazwa.pl, AfterMarket)
-2. W DNS ustaw rekord A na:
-   - 185.199.108.153
-   - 185.199.109.153
-   - 185.199.110.153
-   - 185.199.111.153
-3. W GitHub Pages: dodaj domenę w sekcji "Custom domain"
-4. Utwórz plik `CNAME` w repo z zawartością: `ksef-blog.pl`
+## Status
 
----
-
-## 📝 Automatyczne publikowanie nowych artykułów
-
-Gdy Writer napisze nowy artykuł:
-
-```bash
-cd /home/stan/.openclaw/workspace/ksef-blog
-
-# Dodaj nowy post
-git add _posts/nowy-artykul.md
-git commit -m "Add: Nowy artykuł o KSeF"
-git push origin main
-```
-
-GitHub Pages automatycznie zbuduje i opublikuje nową wersję (30-60 sekund).
-
----
-
-## ✅ Status
-
-Lokalne repo gotowe. Czeka na wypchnięcie do GitHub.
-
-**Następny krok:** Utwórz repozytorium na GitHub i wypchnij kod.
+- ✅ Struktura Jekyll gotowa
+- ✅ Pierwszy artykuł dodany
+- ✅ Layouty skonfigurowane
+- 🔄 Czeka na push do GitHub
