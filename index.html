@@ -1,205 +1,115 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSeF Blog - Odpowiadamy na wszystkie pytania o KSeF</title>
+    <meta name="description" content="Otwórz blog o KSeF. Proste odpowiedzi na pytania o Krajowy System e-Faktur.">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        header { text-align: center; padding: 40px 20px; background: #fff; margin-bottom: 30px; border-radius: 8px; }
+        h1 { color: #333; margin-bottom: 10px; }
+        .subtitle { color: #666; font-style: italic; }
+        .article { background: #fff; padding: 20px; margin-bottom: 15px; border-radius: 8px; }
+        .article h2 { margin: 0 0 10px 0; }
+        .article h2 a { color: #333; text-decoration: none; }
+        .article h2 a:hover { color: #0066cc; }
+        .meta { color: #999; font-size: 14px; margin-bottom: 10px; }
+        .excerpt { color: #555; line-height: 1.6; }
+        .tags { margin-top: 10px; }
+        .tag { background: #e8f0fe; color: #0066cc; padding: 3px 10px; border-radius: 12px; font-size: 12px; margin-right: 5px; }
+        footer { text-align: center; padding: 20px; color: #999; margin-top: 40px; }
+        footer a { color: #666; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KSeF Blog</h1>
+        <p class="subtitle">Odpowiadamy na wszystkie pytania o Krajowy System e-Faktur</p>
+    </header>
 
-<div class="home">
-  <p class="intro">
-    Otwarty blog o KSeF. Odpowiadamy na wszystkie pytania o Krajowy System e-Faktur — prosto, bez korporacyjnego żargonu.
-  </p>
-  
-  <p class="subtitle">
-    Nie udajemy ekspertów. Po prostu czytamy przepisy i dzielimy się tym, czego się uczymy.
-  </p>
+    <main>
+        <article class="article">
+            <h2><a href="2026/02/02/faktura-korygujaca-ksef/">Faktura korygująca w KSeF 2026 - jak wystawić? Kompletny przewodnik</a></h2>
+            <p class="meta">2 lutego 2026</p>
+            <p class="excerpt">Przekroczyłeś 7-dniowy termin na anulowanie faktury? Wystawiłeś fakturę z błędem po terminie? Nie ma problemu — w KSeF możesz wystawić fakturę korygującą...</p>
+            <div class="tags"><span class="tag">faktura-korygujaca</span><span class="tag">korekta-vat</span><span class="tag">ksef</span></div>
+        </article>
 
-  <!-- Search Bar -->
-  <div class="search-container">
-    <input type="text" id="search-input" placeholder="Szukaj artykułów..." onkeyup="searchPosts()">
-    <div id="search-results"></div>
-  </div>
+        <article class="article">
+            <h2><a href="2026/02/02/jak-anulowac-fakture-ksef/">Jak anulować fakturę w KSeF? Kompletny przewodnik 2026</a></h2>
+            <p class="meta">2 lutego 2026</p>
+            <p class="excerpt">Wystawiłeś fakturę przez pomyłkę lub zauważyłeś błąd w danych? Nie panikuj — anulowanie faktury w KSeF jest możliwe, ale musisz działać szybko...</p>
+            <div class="tags"><span class="tag">anulowanie-faktury</span><span class="tag">ksef</span><span class="tag">e-faktura</span></div>
+        </article>
 
-  <!-- Tags Cloud -->
-  <div class="tags-container">
-    <h3>Popularne tagi:</h3>
-    <div class="tags-cloud">
-      {% assign tags = site.tags | sort %}
-      {% for tag in tags %}
-        <a href="/ksef-blog/tags/{{ tag[0] | slugify }}/" class="tag">{{ tag[0] }}</a>
-      {% endfor %}
-    </div>
-  </div>
+        <article class="article">
+            <h2><a href="2026/02/02/ksef-archiwizacja/">KSeF archiwizacja - czy zastępuje papierowe archiwum?</a></h2>
+            <p class="meta">2 lutego 2026</p>
+            <p class="excerpt">KSeF zmienia zasady przechowywania faktur. Wielu przedsiębiorców zadaje to samo pytanie: czy system elektroniczny zastępuje tradycyjne archiwum papierowe?</p>
+            <div class="tags"><span class="tag">archiwizacja</span><span class="tag">przechowywanie-dokumentow</span><span class="tag">ksef</span></div>
+        </article>
 
-  <h2>Najnowsze artykuły:</h2>
-  <ul class="post-list" id="post-list">
-    {% for post in site.posts %}
-      <li class="post-item" data-title="{{ post.title | downcase }}" data-tags="{{ post.tags | join: ',' }}">
-        <div class="post-meta">{{ post.date | date: "%d.%m.%Y" }}</div>
-        <a class="post-link" href="/ksef-blog{{ post.url }}">{{ post.title | escape }}</a>
-        {% if post.tags %}
-          <div class="post-tags">
-            {% for tag in post.tags %}
-              <span class="tag-small">{{ tag }}</span>
-            {% endfor %}
-          </div>
-        {% endif %}
-        {% if post.excerpt %}
-          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+        <article class="article">
+            <h2><a href="2026/02/02/ksef-biura-rachunkowe/">KSeF dla biur rachunkowych - obowiązki i wyzwania</a></h2>
+            <p class="meta">2 lutego 2026</p>
+            <p class="excerpt">KSeF rewolucjonizuje pracę biur rachunkowych. Nowe obowiązki, nowe procedury, nowe odpowiedzialności...</p>
+            <div class="tags"><span class="tag">biura-rachunkowe</span><span class="tag">ksiegowosc</span><span class="tag">ksef</span></div>
+        </article>
 
-<script>
-function searchPosts() {
-  const input = document.getElementById('search-input').value.toLowerCase();
-  const posts = document.querySelectorAll('.post-item');
-  const results = document.getElementById('search-results');
-  
-  if (input.length < 2) {
-    results.style.display = 'none';
-    posts.forEach(post => post.style.display = '');
-    return;
-  }
-  
-  const matching = [];
-  posts.forEach(post => {
-    const title = post.getAttribute('data-title');
-    const tags = post.getAttribute('data-tags');
-    if (title.includes(input) || tags.includes(input)) {
-      matching.push(post);
-      post.style.display = '';
-    } else {
-      post.style.display = 'none';
-    }
-  });
-  
-  if (matching.length > 0) {
-    results.innerHTML = `<strong>Znaleziono ${matching.length} artykułów</strong>`;
-    results.style.display = 'block';
-  } else {
-    results.innerHTML = 'Brak wyników';
-    results.style.display = 'block';
-  }
-}
+        <article class="article">
+            <h2><a href="2026/02/02/ksef-faktury-zagraniczne/">KSeF a faktury zagraniczne - co musisz wiedzieć?</a></h2>
+            <p class="meta">2 lutego 2026</p>
+            <p class="excerpt">Czy faktury z zagranicy trzeba wysyłać do KSeF? Dowiedz się, jak rozliczać faktury zagraniczne w nowym systemie e-Faktur...</p>
+            <div class="tags"><span class="tag">faktury-zagraniczne</span><span class="tag">handel-zagraniczny</span><span class="tag">ksef</span></div>
+        </article>
 
-// Close search results when clicking outside
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.search-container')) {
-    document.getElementById('search-results').style.display = 'none';
-  }
-});
-</script>
+        <article class="article">
+            <h2><a href="2026/02/02/ksef-jednoosobowa-dzialalnosc/">KSeF dla jednoosobowej działalności - praktyczny poradnik</a></h2>
+            <p class="meta">2 lutego 2026</p>
+            <p class="excerpt">Jednoosobowa działalność = pełne obowiązki KSeF. Nie ma ulg dla małych firm. Od 1 lutego 2026 roku każda faktura musi przejść przez system...</p>
+            <div class="tags"><span class="tag">jdg</span><span class="tag">jednoosobowa-dzialalnosc</span><span class="tag">ksef</span></div>
+        </article>
 
-<style>
-.search-container {
-  position: relative;
-  margin: 20px 0;
-}
+        <article class="article">
+            <h2><a href="2026/02/02/ksef-korekty-faktur/">KSeF korekty faktur - procedura krok po kroku</a></h2>
+            <p class="meta">2 lutego 2026</p>
+            <p class="excerpt">Błąd na fakturze w KSeF to nie tragedia, ale wymaga szybkiej reakcji. System pozwala na korektę, ale procedura różni się od tradycyjnego wystawiania...</p>
+            <div class="tags"><span class="tag">korekta-faktury</span><span class="tag">blad-na-fakturze</span><span class="tag">ksef</span></div>
+        </article>
 
-.intro {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 10px;
-}
+        <article class="article">
+            <h2><a href="2026/02/02/ksef-paragony-fiskalne/">KSeF a paragony fiskalne - co się zmienia?</a></h2>
+            <p class="meta">2 lutego 2026</p>
+            <p class="excerpt">Paragony fiskalne i KSeF to dwa różne światy, ale zmiany w przepisach dotykają obu. Przedsiębiorcy często mylą te systemy...</p>
+            <div class="tags"><span class="tag">paragon-fiskalny</span><span class="tag">kasa-fiskalna</span><span class="tag">ksef</span></div>
+        </article>
 
-.subtitle {
-  font-size: 14px;
-  color: #666;
-  font-style: italic;
-  margin-bottom: 30px;
-}
+        <article class="article">
+            <h2><a href="2026/02/02/ksef-split-payment/">KSeF a split payment - jak to działa razem?</a></h2>
+            <p class="meta">2 lutego 2026</p>
+            <p class="excerpt">Split payment i KSeF to dwa osobne systemy, które od 2026 roku będą działać równolegle. Warto wiedzieć, jak się łączą...</p>
+            <div class="tags"><span class="tag">split-payment</span><span class="tag">mechanizm-podzielonej-platnosci</span><span class="tag">ksef</span></div>
+        </article>
 
-#search-input {
-  width: 100%;
-  padding: 12px 20px;
-  font-size: 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  outline: none;
-  transition: border-color 0.3s;
-}
+        <article class="article">
+            <h2><a href="2026/02/02/ksef-termin-wystawienia/">KSeF termin wystawienia faktury - nowe zasady</a></h2>
+            <p class="meta">2 lutego 2026</p>
+            <p class="excerpt">Terminy wystawiania faktur w KSeF są ściśle określone. Opóźnienie grozi utratą prawa do odliczenia VAT i karami skarbowymi...</p>
+            <div class="tags"><span class="tag">termin-wystawienia-faktury</span><span class="tag">vat</span><span class="tag">ksef</span></div>
+        </article>
 
-#search-input:focus {
-  border-color: #0066cc;
-}
+        <article class="article">
+            <h2><a href="2026/02/01/wszystko-o-ksef-2026/">KSeF 2026 - Obowiązkowy System Faktur Od Lutego</a></h2>
+            <p class="meta">1 lutego 2026</p>
+            <p class="excerpt">Od 1 lutego 2026 roku Krajowy System e-Faktur (KSeF) staje się obowiązkowy dla wszystkich przedsiębiorców w Polsce. Sprawdź, co to oznacza dla Twojej firmy...</p>
+            <div class="tags"><span class="tag">ksef</span><span class="tag">e-faktura</span><span class="tag">podatki</span></div>
+        </article>
+    </main>
 
-#search-results {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 10px;
-  margin-top: 5px;
-  display: none;
-  z-index: 1000;
-}
-
-.tags-container {
-  margin: 20px 0;
-}
-
-.tags-container h3 {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.tags-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tag {
-  background: #f0f0f0;
-  color: #333;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 13px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.tag:hover {
-  background: #0066cc;
-  color: white;
-}
-
-.post-tags {
-  margin-top: 5px;
-}
-
-.tag-small {
-  background: #e8f0fe;
-  color: #0066cc;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 11px;
-  margin-right: 5px;
-}
-
-.post-item {
-  padding: 15px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.post-link {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-  text-decoration: none;
-}
-
-.post-link:hover {
-  color: #0066cc;
-}
-
-.post-excerpt {
-  color: #666;
-  font-size: 14px;
-  margin-top: 5px;
-}
-</style>
+    <footer>
+        <p>KSeF Blog - Otwarty projekt o KSeF</p>
+        <p><a href="polityka-prywatnosci/">Polityka Prywatności</a> | <a href="o-nas/">O nas</a></p>
+    </footer>
+</body>
+</html>
