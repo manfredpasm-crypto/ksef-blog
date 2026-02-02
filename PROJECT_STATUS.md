@@ -1,63 +1,99 @@
-# KSEF Blog - Status Projektu
+# KSEF Blog Project Status
 
-**Ostatnia aktualizacja:** 2026-02-02 14:05 UTC
-**Autor:** Manfred (OpenClaw)
-**Dokumentacja główna:** `obsidian-vault/02-Projects/KSEF-Blog.md`
-
-## 🚀 Stan repozytorium
-
-### GitHub
-- **Status:** NIE wypchnięty na GitHub
-- **Katalog:** `/home/stan/.openclaw/workspace/ksef-blog`
-- **Struktura:** Jekyll gotowy, GitHub Pages wymaga konfiguracji
-
-### Publikacja
-- **Blog URL:** jeszcze nie działa (brak GitHub Pages)
-- **Lokalne posty:** 5 w `_posts/`
-- **Artykuły do opublikowania:** 24 w `articles/`
-
-## 📝 Opublikowane posty (_posts/) - 5
-
-1. `2026-02-01-wszystko-o-ksef-2026.md`
-2. `2026-02-02-faktury-zaliczkowe-ksef.md`
-3. `2026-02-02-ksef-api-error-404.md`
-4. `2026-02-02-ksef-archiwizacja.md`
-5. `2026-02-02-ksef-faktury-zagraniczne.md`
-
-## 📄 Artykuły do przeglądu (articles/)
-
-### quick/ (gotowe do publikacji?)
-- *sprawdzić co jest*
-
-### seo-ready/ (zoptymalizowane SEO)
-- *sprawdzić co jest*
-
-### edited/ (przeredagowane)
-- *sprawdzić co jest*
-
-### optimized/ (zoptymalizowane)
-- *sprawdzić co jest*
-
-## 🔧 Następne kroki (kolejność priorytetów)
-
-1. **Git:** Stworzyć repo GitHub, wypchnąć kod
-2. **GitHub Pages:** Włączyć w ustawieniach
-3. **Artykuły:** Przenieść z `articles/` do `_posts/`
-4. **QA:** Sprawdzić czy wszystko działa
-
-## 💡 Problemy do rozwiązania
-
-- GitHub nie podłączony
-- 5 artykułów czeka na decyzję (publikować/przeredagować?)
-- Sesje grupowe na Kimi mogą nie działać (API padło)
-
-## 🔗 Przydatne ścieżki
-
-- Blog: `/home/stan/.openclaw/workspace/ksef-blog/`
-- Artykuły: `/home/stan/.openclaw/workspace/articles/`
-- Deploy: `/home/stan/.openclaw/workspace/ksef-blog/DEPLOY.md`
-- Konfiguracja: `/home/stan/.openclaw/workspace/ksef-blog/_config.yml`
+**Last Updated:** 2026-02-02  
+**Status:** Operational
 
 ---
 
-*Ten plik = źródło prawdy. Aktualizować przy każdej zmianie.*
+## 📊 Quick Stats
+
+| Metric | Value |
+|--------|-------|
+| Articles Published | 11 |
+| Articles Pending Optimization | 10 |
+| Blog Structure | ✅ 3 tabs (Newsy/Poradniki/Baza Wiedzy) |
+| Search | ✅ Working |
+| RSS | ✅ Working |
+| GA4 | ✅ G-NSCXE8LHDP |
+
+---
+
+## 🎯 Active Projects
+
+### 1. Trading AI Agent (NEW - PRIORITY)
+**Location:** `/home/stan/.openclaw/workspace/trading-bot/`  
+**Goal:** Build AI agent for micro-scalping (0.1-0.5% gains)
+
+**Status:**
+- Code written ✅
+- API keys received ✅
+- Next: Paper trade cycle
+
+**Files:**
+- `main.py` - Bot orchestrator
+- `src/exchange/binance.py` - ccxt connection
+- `src/strategies/rsi_scalping.py` - RSI strategy
+- `src/risk/manager.py` - Risk controls
+
+**Knowledge Base:** `obsidian-vault/02-Projects/Trading-AI-Agent/`
+
+---
+
+## 📈 Traffic (GA4)
+
+First data expected in 24-48 hours after deployment.
+
+---
+
+## 🔧 Automation (Cron Jobs)
+
+| Job | Schedule | Status |
+|-----|----------|--------|
+| ksef-knowledge | Every 2 hours | Active |
+| ksef-researcher | Every 4 hours | Active |
+| ksef-pipeline | Daily 8 AM | Active |
+
+---
+
+## 📋 TODOs
+
+### Trading Agent (Priority)
+- [ ] Fix Python environment (pip install)
+- [ ] Test Binance connection
+- [ ] First paper trade cycle
+- [ ] Agent learning workflow (read materials)
+
+### KSEF Blog (Secondary)
+- [ ] Optimize 10 remaining articles
+- [ ] Monitor GA4 data
+- [ ] Add more content based on searches
+
+---
+
+## 🔗 Useful Links
+
+- **Blog:** https://manfredpasm-crypto.github.io/ksef-blog/
+- **GitHub:** https://github.com/manfredpasm-crypto/ksef-blog
+- **Brave API:** BSAj23QcSqWpKqLf6r-TkZ9pU-2nIjP
+- **GA4:** G-NSCXE8LHDP
+
+---
+
+## 📁 Agent Workspaces
+
+```
+/home/stan/.openclaw/workspace/agents/
+├── ksef-knowledge/     # Research & knowledge base
+├── ksef-researcher/    # Web research
+├── ksef-writer/        # Content creation
+├── ksef-editor/        # Quality control
+├── ksef-deploy/        # Deployment
+└── ksef-ux/            # UX improvements
+
+/home/stan/.openclaw/workspace/
+└── trading-bot/        # NEW: Trading AI Agent ⭐
+```
+
+---
+
+*See also: [[Index]] for full vault navigation.*
