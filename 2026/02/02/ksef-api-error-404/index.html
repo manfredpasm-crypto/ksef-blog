@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSeF API Error 404 - 5 Skutecznych Sposobów Naprawy | Troubleshooting</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 750px; margin: 0 auto; padding: 20px; background: #f9f9f9; line-height: 1.7; }
+        article { background: #fff; padding: 30px; border-radius: 8px; }
+        h1 { color: #222; margin-bottom: 20px; }
+        h2 { color: #333; margin-top: 30px; }
+        h3 { color: #444; }
+        p { color: #555; }
+        a { color: #0066cc; }
+        .meta { color: #999; font-size: 14px; margin-bottom: 20px; }
+        .tags { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+        .tag { background: #e8f0fe; color: #0066cc; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin-right: 8px; }
+        footer { text-align: center; padding: 30px; color: #999; margin-top: 30px; }
+        footer a { color: #666; }
+    </style>
+</head>
+<body>
+    <article>
+        <h1>KSeF API Error 404 - 5 Skutecznych Sposobów Naprawy | Troubleshooting</h1>
+        <p class="meta">2026-02-02 08:00:00 +0100</p>
+        <div class="content">
+            </p><p>
+<strong>Czas czytania:<strong> 5 minut  
+<strong>Poziom trudności:<strong> średniozaawansowany
+</p><p>
+---
+</p><p>
+
+<h2>Co Oznacza Błąd 404 w API KSeF?</h2>
+<p>
+</p><p>
+<strong>Error 404 w KSeF API<strong> to jeden z najczęstszych błędów, z którymi spotykają się deweloperzy i księgowi integrujący się z Krajowym Systemem e-Faktur. Błąd ten najczęściej oznacza jedno z trzech:
+</p><p>
+
+<h3>Główne Przyczyny Błędu 404 w KSeF:</h3>
+</p><p>
+1. <strong>Nieprawidłowy endpoint API KSeF<strong> – struktura API uległa zmianie
+2. <strong>Brak uprawnień do zasobu KSeF<strong> – token nie ma dostępu do faktury
+3. <strong>Nieistniejąca faktura w KSeF<strong> – szukasz dokumentu, którego nie ma w systemie
+</p><p>
+> 💡 <strong>Czytaj też:<strong> [Kompletny przewodnik po KSeF 2026 – wszystko co musisz wiedzieć](/blog/ksef-2026-wszystko-co-musisz-wiedziec)
+</p><p>
+---
+</p><p>
+
+<h2>Sposób 1: Sprawdź URL Endpointu API KSeF</h2>
+<p>
+</p><p>
+KSeF zmieniało strukturę API w latach 2024-2025. Upewnij się, że używasz <strong>aktualnej wersji endpointów<strong>:
+</p><p>
+```
+❌ Stary endpoint KSeF: /api/v1/faktury
+✅ Nowy endpoint KSeF: /api/v2/faktury
+```
+</p><p>
+
+<h3>Jak Sprawdzić Aktualną Dokumentację KSeF API?</h3>
+</p><p>
+Przed każdym wdrożeniem sprawdź:
+- 📚 [Oficjalną dokumentację API KSeF Ministerstwa Finansów](https://ksef.mf.gov.pl)
+- 🧪 [Środowisko testowe KSeF](https://ksef-test.mf.gov.pl)
+- 📋 Changelog zmian w API KSeF
+</p><p>
+---
+</p><p>
+
+<h2>Sposób 2: Weryfikacja Tokenu Dostępowego KSeF</h2>
+<p>
+</p><p>
+Token dostępowy do KSeF API może być problematyczny z trzech powodów:
+</p><p>
+
+<h3>Problemy z Tokenem KSeF:</h3>
+</p><p>
+| Problem | Objaw | Rozwiązanie |
+|---------|-------|-------------|
+| <strong>Wygasły token<strong> | Błąd 401/403 | Odśwież token w panelu KSeF |
+| <strong>Nieprawidłowy scope<strong> | Błąd 404 na fakturach | Sprawdź uprawnienia tokenu |
+| <strong>Token revoked<strong> | Błąd autoryzacji | Wygeneruj nowy token KSeF |
+</p><p>
+
+<h3>Automatyczne Odświeżanie Tokenów w firmowid.pl</h3>
+</p><p>
+W <strong>firmowid.pl<strong> automatycznie odświeżamy tokeny KSeF – nie musisz się martwić o ich wygaśnięcie.
+</p><p>
+👉 <strong>[Wypróbuj firmowid.pl - bezproblemowa integracja KSeF](https://firmowid.pl)<strong>
+</p><p>
+---
+</p><p>
+
+<h2>Sposób 3: Sprawdź Czy Faktura Istnieje w KSeF</h2>
+<p>
+</p><p>
+Błąd 404 w KSeF może oznaczać, że faktura:
+- ⏳ Nie została jeszcze przetworzona przez system
+- 🗑️ Została usunięta z KSeF
+- 👤 Należy do innego podmiotu w KSeF
+</p><p>
+
+<h3>Rozwiązanie Problemów z Fakturami w KSeF:</h3>
+</p><p>
+<strong>Poczekaj 5-10 minut i spróbuj ponownie.<strong> KSeF potrafi mieć opóźnienia w przetwarzaniu faktur, szczególnie w godzinach szczytu.
+</p><p>
+> 💡 <strong>Czytaj też:<strong> [Faktury zaliczkowe w KSeF – jak poprawnie powiązać dokumenty](/blog/faktury-zaliczkowe-ksef-kompletny-przewodnik)
+</p><p>
+---
+</p><p>
+
+<h2>Sposób 4: Debugowanie KSeF API z Postman</h2>
+<p>
+</p><p>
+Zanim wdrozysz kod produkcyjny, przetestuj API KSeF ręcznie:
+</p><p>
+
+<h3>Krok po Kroku – Testowanie KSeF API w Postman:</h3>
+</p><p>
+1. <strong>Otwórz Postman<strong> lub inne narzędzie do testowania API
+2. <strong>Ustaw nagłówek autoryzacji:<strong>
+   ```
+   Authorization: Bearer {twój_token_ksef}
+   ```
+3. <strong>Wyślij żądanie GET<strong> na wybrany endpoint KSeF
+4. <strong>Sprawdź dokładnie co zwraca API<strong> – nie tylko kod błędu, ale też treść odpowiedzi
+</p><p>
+
+<h3>Co Sprawdzić w Odpowiedzi KSeF API?</h3>
+</p><p>
+- Kod statusu HTTP (404, 401, 403, 500)
+- Treść błędu w formacie JSON
+- Nagłówki odpowiedzi (X-Request-ID dla diagnostyki)
+</p><p>
+---
+</p><p>
+
+<h2>Sposób 5: Skontaktuj Się z Wsparciem KSeF</h2>
+<p>
+</p><p>
+Jeśli żaden ze sposobów nie pomaga, masz opcje:
+</p><p>
+
+<h3>Oficjalne Wsparcie KSeF:</h3>
+</p><p>
+- 📞 <strong>Infolinia KSeF:<strong> 22 606 60 60
+- 📧 <strong>Email KSeF:<strong> ksef@mf.gov.pl
+- 🕐 <strong>Godziny pracy:<strong> poniedziałek-piątek, 8:00-18:00
+</p><p>
+
+<h3>Alternatywa – Zleć To Nam:</h3>
+</p><p>
+<strong>[Użyj firmowid.pl](https://firmowid.pl)<strong> – my obsługujemy wszystkie problemy z API KSeF za Ciebie. Nie musisz debugować tokenów, endpointów ani błędów 404.
+</p><p>
+---
+</p><p>
+
+<h2>Podsumowanie: Jak Naprawić Błąd 404 w KSeF API?</h2>
+<p>
+</p><p>
+Error 404 w KSeF API to zazwyczaj problem z konfiguracją, nie z samym systemem Ministerstwa Finansów. Najważniejsze zasady:
+</p><p>
+
+<h3>✅ Checklista Naprawy Błędu 404 KSeF:</h3>
+</p><p>
+- [ ] Używaj <strong>aktualnej dokumentacji KSeF API<strong> – sprawdzaj endpointy
+- [ ] <strong>Weryfikuj tokeny<strong> – sprawdź czy nie wygasły i mają odpowiedni scope
+- [ ] <strong>Testuj przed wdrożeniem<strong> – użyj Postman do diagnostyki
+- [ ] <strong>Sprawdź czy faktura istnieje<strong> – poczekaj na przetworzenie przez 
+        </div>
+        <div class="tags">
+            <span class="tag">ksef</span> <span class="tag">api</span> <span class="tag">error-404</span> <span class="tag">troubleshooting</span> <span class="tag">firmowid</span> <span class="tag">ksef-api</span> <span class="tag">błąd-404</span> <span class="tag">naprawa</span> 
+        </div>
+    </article>
+    <footer>
+        <p><a href="/ksef-blog/">← Wróć do KSeF Blog</a> | <a href="/ksef-blog/polityka-prywatnosci/">Polityka Prywatności</a></p>
+    </footer>
+</body>
+</html>
