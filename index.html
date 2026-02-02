@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KSeF Blog - Odpowiadamy na pytania o KSeF</title>
-    <meta name="description" content="Otwórz blog o KSeF. Proste odpowiedzi na pytania o Krajowy System e-Faktur.">
+    <title>KSeF Blog - Newsy, Poradniki, Baza Wiedzy</title>
+    <meta name="description" content="Kompletne źródło wiedzy o KSeF. Newsy, poradniki i baza artykułów.">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSCXE8LHDP"></script>
@@ -17,191 +17,274 @@
     
     <style>
         * { box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f9f9f9; line-height: 1.6; }
-        header { background: #fff; padding: 30px; border-radius: 12px; margin-bottom: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        h1 { margin: 0 0 8px; color: #222; font-size: 28px; }
-        .subtitle { color: #666; font-style: italic; margin: 0 0 20px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #f5f5f7; line-height: 1.6; }
         
-        /* Search box */
-        .search-box { margin: 20px auto; max-width: 500px; position: relative; }
-        .search-box input { 
-            width: 100%; padding: 14px 24px; font-size: 16px; 
-            border: 2px solid #e0e0e0; border-radius: 30px; outline: none;
+        /* Header */
+        header { background: #fff; padding: 25px; border-radius: 16px; margin-bottom: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        h1 { margin: 0 0 5px; color: #1a1a1a; font-size: 32px; }
+        .tagline { color: #666; font-size: 15px; margin-bottom: 20px; }
+        
+        /* Navigation Tabs */
+        .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px; }
+        .tab { 
+            padding: 12px 24px; border: none; background: #f0f0f5; 
+            border-radius: 25px; cursor: pointer; font-size: 15px; font-weight: 500;
+            transition: all 0.3s; color: #555;
+        }
+        .tab:hover { background: #e0e0ea; }
+        .tab.active { background: #0066cc; color: #fff; }
+        
+        /* Search */
+        .search-container { margin-top: 20px; }
+        .search-input { 
+            width: 100%; padding: 14px 20px; font-size: 16px; 
+            border: 2px solid #e5e5eb; border-radius: 12px; outline: none;
             transition: all 0.3s; background: #fafafa;
         }
-        .search-box input:focus { border-color: #0066cc; background: #fff; box-shadow: 0 0 0 4px rgba(0,102,204,0.1); }
-        .search-box input::placeholder { color: #aaa; }
-        .search-hint { font-size: 12px; color: #999; margin-top: 8px; }
+        .search-input:focus { border-color: #0066cc; background: #fff; box-shadow: 0 0 0 4px rgba(0,102,204,0.1); }
         
-        /* Results */
-        .results-count { 
-            display: none; padding: 12px 16px; background: #e8f0fe; 
-            color: #0066cc; border-radius: 8px; margin-bottom: 15px;
-            font-size: 14px; text-align: center;
+        /* Sections */
+        .section { display: none; }
+        .section.active { display: block; }
+        .section-title { font-size: 22px; color: #1a1a1a; margin: 25px 0 15px; padding-bottom: 10px; border-bottom: 2px solid #0066cc; }
+        
+        /* News Items */
+        .news-item { 
+            background: #fff; padding: 20px; margin-bottom: 15px; 
+            border-radius: 12px; border-left: 4px solid #ff4444;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
-        .no-results {
-            display: none; padding: 30px; background: #fff; 
-            border-radius: 8px; text-align: center; color: #666;
+        .news-meta { font-size: 12px; color: #999; margin-bottom: 5px; }
+        .news-title { font-size: 18px; margin: 0 0 8px; }
+        .news-title a { color: #1a1a1a; text-decoration: none; }
+        .news-title a:hover { color: #0066cc; }
+        .news-excerpt { color: #555; font-size: 14px; }
+        .news-badge { 
+            display: inline-block; padding: 3px 10px; background: #ffebee; 
+            color: #c62828; border-radius: 12px; font-size: 11px; margin-right: 8px;
         }
         
-        article { background: #fff; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); transition: all 0.2s; }
-        article:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        article h2 { margin: 0 0 8px; font-size: 20px; }
-        article h2 a { color: #222; text-decoration: none; transition: color 0.2s; }
-        article h2 a:hover { color: #0066cc; }
-        .meta { color: #999; font-size: 13px; margin-bottom: 10px; }
-        .excerpt { color: #555; font-size: 15px; }
-        .tags { margin-top: 12px; }
-        .tag { display: inline-block; background: #e8f0fe; color: #0066cc; padding: 4px 12px; border-radius: 15px; font-size: 12px; margin-right: 6px; margin-bottom: 4px; }
+        /* Guide Items */
+        .guide-item { 
+            background: #fff; padding: 20px; margin-bottom: 15px; 
+            border-radius: 12px; border-left: 4px solid #0066cc;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .guide-title { font-size: 18px; margin: 0 0 8px; }
+        .guide-title a { color: #1a1a1a; text-decoration: none; }
+        .guide-title a:hover { color: #0066cc; }
+        .guide-excerpt { color: #555; font-size: 14px; margin-bottom: 10px; }
         
-        footer { text-align: center; padding: 30px 20px; color: #999; margin-top: 30px; border-top: 1px solid #eee; }
-        footer a { color: #666; text-decoration: none; }
-        footer a:hover { color: #0066cc; }
+        /* Knowledge Items */
+        .knowledge-item { 
+            background: #fff; padding: 20px; margin-bottom: 15px; 
+            border-radius: 12px; border-left: 4px solid #4caf50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .knowledge-title { font-size: 18px; margin: 0 0 8px; }
+        .knowledge-title a { color: #1a1a1a; text-decoration: none; }
+        .knowledge-title a:hover { color: #4caf50; }
+        .knowledge-excerpt { color: #555; font-size: 14px; margin-bottom: 12px; }
+        
+        /* Tags */
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag { 
+            display: inline-block; padding: 4px 12px; background: #e8f5e9; 
+            color: #2e7d32; border-radius: 15px; font-size: 12px;
+        }
+        
+        /* Footer */
+        footer { text-align: center; padding: 30px 20px; color: #999; margin-top: 40px; border-top: 1px solid #e0e0e0; }
+        footer a { color: #666; text-decoration: none; margin: 0 10px; }
         
         /* Responsive */
         @media (max-width: 600px) {
             body { padding: 10px; }
-            header { padding: 20px; }
-            h1 { font-size: 24px; }
-            article { padding: 15px; }
-            article h2 { font-size: 18px; }
+            .tabs { flex-direction: column; }
+            .tab { text-align: center; }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>🔍 KSeF Blog</h1>
-        <p class="subtitle">Odpowiadamy na wszystkie pytania o Krajowy System e-Faktur</p>
+        <p class="tagline">Twoje centrum wiedzy o Krajowym Systemie e-Faktur</p>
         
-        <div class="search-box">
-            <input type="text" id="search" placeholder="Szukaj... (np. anulowanie, faktura, VAT, JDG)" onkeyup="searchArticles()" autofocus>
-            <p class="search-hint">Wpisz słowo kluczowe, aby znaleźć artykuł</p>
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('news')">📰 Newsy</button>
+            <button class="tab" onclick="showTab('guides')">📚 Poradniki</button>
+            <button class="tab" onclick="showTab('knowledge')">💡 Baza Wiedzy</button>
         </div>
-        <p class="results-count" id="results-count"></p>
-        <p class="no-results" id="no-results">Nie znaleziono artykułów dla tego zapytania. Spróbuj inne słowo kluczowe.</p>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Szukaj... (np. anulowanie, faktura, VAT, JDG)" id="search" onkeyup="searchAll()">
+        </div>
     </header>
 
-    <main id="articles">
-        <article data-title="faktura korygująca korekta vat anulowanie" data-tags="faktura korygująca korekt vat fa korekta">
-            <h2><a href="2026/02/02/faktura-korygujaca-ksef/">Faktura korygująca w KSeF 2026 - jak wystawić?</a></h2>
-            <p class="meta">2 lutego 2026</p>
-            <p class="excerpt">Przekroczyłeś 7-dniowy termin na anulowanie faktury? W KSeF możesz wystawić fakturę korygującą...</p>
-            <div class="tags"><span class="tag">faktura korygująca</span><span class="tag">korekta VAT</span></div>
-        </article>
+    <!-- NEWS SECTION -->
+    <div id="news" class="section active">
+        <h2 class="section-title">📰 Najnowsze informacje o KSeF</h2>
+        
+        <div class="news-item" data-keywords="termin luty 2026 obowiązkowy">
+            <p class="news-meta"><span class="news-badge">AKTUALNOŚĆ</span>2 lutego 2026</p>
+            <h3 class="news-title"><a href="2026/02/01/wszystko-o-ksef-2026/">KSeF obowiązkowy od 1 lutego 2026</a></h3>
+            <p class="news-excerpt">Od 1 lutego 2026 roku Krajowy System e-Faktur staje się obowiązkowy dla wszystkich przedsiębiorców w Polsce. Sprawdź co to oznacza dla Twojej firmy.</p>
+        </div>
+        
+        <div class="news-item" data-keywords="terminy 15 dni data">
+            <p class="news-meta"><span class="news-badge">WAŻNE</span>2 lutego 2026</p>
+            <h3 class="news-title"><a href="2026/02/02/ksef-termin-wystawienia/">Terminy wystawienia faktur - co musisz wiedzieć</a></h3>
+            <p class="news-excerpt">Terminy w KSeF są ściśle określone. Opóźnienie grozi utratą prawa do odliczenia VAT. Poznaj zasady.</p>
+        </div>
+        
+        <div class="news-item" data-keywords="split payment mpp">
+            <p class="news-meta"><span class="news-badge">PŁATNOŚCI</span>2 lutego 2026</p>
+            <h3 class="news-title"><a href="2026/02/02/ksef-split-payment/">Split payment - jak działa z KSeF</a></h3>
+            <p class="news-excerpt">Mechanizm podzielonej płatności współpracuje z KSeF. Dowiedz się jak prawidłowo stosować MPP.</p>
+        </div>
+    </div>
 
-        <article data-title="anulowanie faktury błąd pomyłka" data-tags="anulowanie faktura błąd pomyłka szkic">
-            <h2><a href="2026/02/02/jak-anulowac-fakture-ksef/">Jak anulować fakturę w KSeF?</a></h2>
-            <p class="meta">2 lutego 2026</p>
-            <p class="excerpt">Wystawiłeś fakturę przez pomyłkę? Anulowanie jest możliwe, ale musisz działać szybko...</p>
-            <div class="tags"><span class="tag">anulowanie</span><span class="tag">e-faktura</span></div>
-        </article>
+    <!-- GUIDES SECTION -->
+    <div id="guides" class="section">
+        <h2 class="section-title">📚 Poradniki KSeF</h2>
+        
+        <div class="guide-item" data-keywords="anulowanie faktura błąd pomyłka szkic">
+            <h3 class="guide-title"><a href="2026/02/02/jak-anulowac-fakture-ksef/">Jak anulować fakturę w KSeF?</a></h3>
+            <p class="guide-excerpt">Krok po kroku instrukcja anulowania faktury. Poznaj 7-dniowy limit i procedurę w systemie.</p>
+            <div class="tags"><span class="tag">anulowanie</span><span class="tag">procedura</span></div>
+        </div>
+        
+        <div class="guide-item" data-keywords="faktura korygująca korekta fa korekta">
+            <h3 class="guide-title"><a href="2026/02/02/faktura-korygujaca-ksef/">Faktura korygująca - jak wystawić?</a></h3>
+            <p class="guide-excerpt">Gdy minie termin anulowania, wystaw fakturę korygującą. Dowiedz się jak to zrobić poprawnie.</p>
+            <div class="tags"><span class="tag">korekta</span><span class="tag">FA_KOREKTA</span></div>
+        </div>
+        
+        <div class="guide-item" data-keywords="archiwizacja dokumenty przechowywanie">
+            <h3 class="guide-title"><a href="2026/02/02/ksef-archiwizacja/">Archiwizacja dokumentów w KSeF</a></h3>
+            <p class="guide-excerpt">Czy KSeF zastępuje papierowe archiwum? Jak długo przechowywać faktury elektroniczne?</p>
+            <div class="tags"><span class="tag">archiwizacja</span><span class="tag">10 lat</span></div>
+        </div>
+        
+        <div class="guide-item" data-keywords="biura rachunkowe księgowy pełnomocnictwo">
+            <h3 class="guide-title"><a href="2026/02/02/ksef-biura-rachunkowe/">KSeF dla biur rachunkowych</a></h3>
+            <p class="guide-excerpt">Jak biura rachunkowe mogą korzystać z KSeF w imieniu klientów? Pełnomocnictwa i procedury.</p>
+            <div class="tags"><span class="tag">biura rachunkowe</span><span class="tag">pełnomocnictwo</span></div>
+        </div>
+    </div>
 
-        <article data-title="archiwizacja dokumenty przechowywanie papier" data-tags="archiwizacja dokumenty przechowywanie papier 10 lat">
-            <h2><a href="2026/02/02/ksef-archiwizacja/">KSeF archiwizacja - czy zastępuje papierowe archiwum?</a></h2>
-            <p class="meta">2 lutego 2026</p>
-            <p class="excerpt">KSeF zmienia zasady przechowywania faktur. Czy system elektroniczny zastępuje tradycyjne archiwum?</p>
-            <div class="tags"><span class="tag">archiwizacja</span><span class="tag">dokumenty</span></div>
-        </article>
-
-        <article data-title="biura rachunkowe księgowy usługi" data-tags="biura rachunkowe księgowy usługi pełnomocnictwo">
-            <h2><a href="2026/02/02/ksef-biura-rachunkowe/">KSeF dla biur rachunkowych</a></h2>
-            <p class="meta">2 lutego 2026</p>
-            <p class="excerpt">KSeF rewolucjonizuje pracę biur rachunkowych. Nowe obowiązki i procedury...</p>
-            <div class="tags"><span class="tag">biura rachunkowe</span><span class="tag">księgowość</span></div>
-        </article>
-
-        <article data-title="faktury zagraniczne import export ue" data-tags="faktury zagraniczne import export ue handel zagraniczny">
-            <h2><a href="2026/02/02/ksef-faktury-zagraniczne/">KSeF a faktury zagraniczne</a></h2>
-            <p class="meta">2 lutego 2026</p>
-            <p class="excerpt">Czy faktury z zagranicy trzeba wysyłać do KSeF? Dowiedz się jak rozliczać faktury zagraniczne...</p>
-            <div class="tags"><span class="tag">handel zagraniczny</span><span class="tag">import</span></div>
-        </article>
-
-        <article data-title="jednoosobowa działalność jdg firma" data-tags="jednoosobowa działalność jdg firma mała firma">
-            <h2><a href="2026/02/02/ksef-jednoosobowa-dzialalnosc/">KSeF dla jednoosobowej działalności</a></h2>
-            <p class="meta">2 lutego 2026</p>
-            <p class="excerpt">Jednoosobowa działalność = pełne obowiązki KSeF. Nie ma ulg dla małych firm...</p>
-            <div class="tags"><span class="tag">JDG</span><span class="tag">firma</span></div>
-        </article>
-
-        <article data-title="korekty faktur błąd procedura" data-tags="korekty faktur błąd procedura fa korekta">
-            <h2><a href="2026/02/02/ksef-korekty-faktur/">KSeF korekty faktur - procedura</a></h2>
-            <p class="meta">2 lutego 2026</p>
-            <p class="excerpt">Błąd na fakturze w KSeF? System pozwala na korektę, ale procedura różni się od tradycyjnej...</p>
-            <div class="tags"><span class="tag">korekta</span><span class="tag">błąd</span></div>
-        </article>
-
-        <article data-title="paragony fiskalne kasa" data-tags="paragony fiskalne kasa fiskalna paragon">
-            <h2><a href="2026/02/02/ksef-paragony-fiskalne/">KSeF a paragony fiskalne</a></h2>
-            <p class="meta">2 lutego 2026</p>
-            <p class="excerpt">Paragony fiskalne i KSeF to dwa różne światy. Co się zmienia w 2026?</p>
-            <div class="tags"><span class="tag">paragon</span><span class="tag">kasa fiskalna</span></div>
-        </article>
-
-        <article data-title="split payment podzielona płatność vat" data-tags="split payment podzielona płatność vat mpp">
-            <h2><a href="2026/02/02/ksef-split-payment/">KSeF a split payment</a></h2>
-            <p class="meta">2 lutego 2026</p>
-            <p class="excerpt">Split payment i KSeF to dwa osobne systemy. Jak ze sobą współpracują?</p>
-            <div class="tags"><span class="tag">split payment</span><span class="tag">płatności</span></div>
-        </article>
-
-        <article data-title="terminy wystawienia faktury 15 dni" data-tags="terminy wystawienia 15 dni data vat">
-            <h2><a href="2026/02/02/ksef-termin-wystawienia/">KSeF terminy wystawienia faktur</a></h2>
-            <p class="meta">2 lutego 2026</p>
-            <p class="excerpt">Terminy w KSeF są ściśle określone. Opóźnienie grozi utratą prawa do odliczenia VAT...</p>
-            <div class="tags"><span class="tag">terminy</span><span class="tag">VAT</span></div>
-        </article>
-
-        <article data-title="przewodnik wszystko e-faktura luty 2026" data-tags="przewodnik wszystko e-faktura luty 2026 obowiązkowy">
-            <h2><a href="2026/02/01/wszystko-o-ksef-2026/">KSeF 2026 - wszystko co musisz wiedzieć</a></h2>
-            <p class="meta">1 lutego 2026</p>
-            <p class="excerpt">Od 1 lutego 2026 KSeF staje się obowiązkowy. Sprawdź co to oznacza dla Twojej firmy...</p>
-            <div class="tags"><span class="tag">przewodnik</span><span class="tag">e-faktura</span></div>
-        </article>
-    </main>
+    <!-- KNOWLEDGE BASE SECTION -->
+    <div id="knowledge" class="section">
+        <h2 class="section-title">💡 Baza Wiedzy KSeF</h2>
+        <p style="color: #666; margin-bottom: 20px;">Wszystkie artykuły, porady i szczegółowe informacje o KSeF.</p>
+        
+        <div class="knowledge-item" data-keywords="faktura korygująca korekta vat anulowanie">
+            <h3 class="knowledge-title"><a href="2026/02/02/faktura-korygujaca-ksef/">Faktura korygująca w KSeF 2026 - kompletny przewodnik</a></h3>
+            <p class="knowledge-excerpt">Przekroczyłeś 7-dniowy termin na anulowanie faktury? W KSeF możesz wystawić fakturę korygującą. Dowiedz się wszystkiego o FA_KOREKTA, FA_ZW i innych typach dokumentów korygujących.</p>
+            <div class="tags"><span class="tag">faktura korygująca</span><span class="tag">korekta VAT</span><span class="tag">FA_KOREKTA</span></div>
+        </div>
+        
+        <div class="knowledge-item" data-keywords="anulowanie faktura błąd szkic 7 dni">
+            <h3 class="knowledge-title"><a href="2026/02/02/jak-anulowac-fakture-ksef/">Jak anulować fakturę w KSeF - instrukcja krok po kroku</a></h3>
+            <p class="knowledge-excerpt">Wystawiłeś fakturę przez pomyłkę? Anulowanie jest możliwe, ale musisz działać szybko. Poznaj procedurę i limity czasowe.</p>
+            <div class="tags"><span class="tag">anulowanie</span><span class="tag">błąd</span><span class="tag">7 dni</span></div>
+        </div>
+        
+        <div class="knowledge-item" data-keywords="archiwizacja dokumenty przechowywanie papier 10 lat">
+            <h3 class="knowledge-title"><a href="2026/02/02/ksef-archiwizacja/">KSeF archiwizacja - czy zastępuje papierowe archiwum?</a></h3>
+            <p class="knowledge-excerpt">KSeF zmienia zasady przechowywania faktur. Czy system elektroniczny zastępuje tradycyjne archiwum? Jak długo musisz przechowywać dokumenty?</p>
+            <div class="tags"><span class="tag">archiwizacja</span><span class="tag">dokumenty</span><span class="tag">10 lat</span></div>
+        </div>
+        
+        <div class="knowledge-item" data-keywords="biura rachunkowe księgowy usługi pełnomocnictwo">
+            <h3 class="knowledge-title"><a href="2026/02/02/ksef-biura-rachunkowe/">KSeF dla biur rachunkowych - obowiązki i wyzwania</a></h3>
+            <p class="knowledge-excerpt">KSeF rewolucjonizuje pracę biur rachunkowych. Jakie nowe obowiązki mają księgowi? Jak działa pełnomocnictwo techniczne i merytoryczne?</p>
+            <div class="tags"><span class="tag">biura rachunkowe</span><span class="tag">księgowość</span><span class="tag">pełnomocnictwo</span></div>
+        </div>
+        
+        <div class="knowledge-item" data-keywords="faktury zagraniczne import export ue">
+            <h3 class="knowledge-title"><a href="2026/02/02/ksef-faktury-zagraniczne/">KSeF a faktury zagraniczne - co musisz wiedzieć</a></h3>
+            <p class="knowledge-excerpt">Czy faktury z zagranicy trzeba wysyłać do KSeF? Jak rozliczać faktury importowe i WNT? Poznaj zasady dla handlu zagranicznego.</p>
+            <div class="tags"><span class="tag">handel zagraniczny</span><span class="tag">import</span><span class="tag">WNT</span></div>
+        </div>
+        
+        <div class="knowledge-item" data-keywords="jednoosobowa działalność jdg firma">
+            <h3 class="knowledge-title"><a href="2026/02/02/ksef-jednoosobowa-dzialalnosc/">KSeF dla jednoosobowej działalności - praktyczny poradnik</a></h3>
+            <p class="knowledge-excerpt">Jednoosobowa działalność = pełne obowiązki KSeF. Nie ma ulg dla małych firm. Dowiedz się jak przygotować swoją firmę na KSeF.</p>
+            <div class="tags"><span class="tag">JDG</span><span class="tag">firma</span><span class="tag">mały podatnik</span></div>
+        </div>
+        
+        <div class="knowledge-item" data-keywords="korekty faktur błąd procedura fa korekta">
+            <h3 class="knowledge-title"><a href="2026/02/02/ksef-korekty-faktur/">KSeF korekty faktur - procedura krok po kroku</a></h3>
+            <p class="knowledge-excerpt">Błąd na fakturze w KSeF? System pozwala na korektę, ale procedura różni się od tradycyjnego wystawiania faktur korygujących.</p>
+            <div class="tags"><span class="tag">korekta</span><span class="tag">błąd</span><span class="tag">procedura</span></div>
+        </div>
+        
+        <div class="knowledge-item" data-keywords="paragony fiskalne kasa">
+            <h3 class="knowledge-title"><a href="2026/02/02/ksef-paragony-fiskalne/">KSeF a paragony fiskalne - co się zmienia?</a></h3>
+            <p class="knowledge-excerpt">Paragony fiskalne i KSeF to dwa różne światy. Co się zmienia w 2026 roku? Jak wystawiać faktury do paragonów?</p>
+            <div class="tags"><span class="tag">paragon</span><span class="tag">kasa fiskalna</span><span class="tag">faktura do paragonu</span></div>
+        </div>
+        
+        <div class="knowledge-item" data-keywords="split payment mpp podzielona płatność">
+            <h3 class="knowledge-title"><a href="2026/02/02/ksef-split-payment/">KSeF a split payment - jak to działa razem?</a></h3>
+            <p class="knowledge-excerpt">Split payment i KSeF to dwa osobne systemy, które współpracują. Jak stosować mechanizm podzielonej płatności w nowym systemie e-Faktur?</p>
+            <div class="tags"><span class="tag">split payment</span><span class="tag">MPP</span><span class="tag">płatności</span></div>
+        </div>
+        
+        <div class="knowledge-item" data-keywords="terminy wystawienia 15 dni data">
+            <h3 class="knowledge-title"><a href="2026/02/02/ksef-termin-wystawienia/">KSeF terminy wystawienia faktur - nowe zasady</a></h3>
+            <p class="knowledge-excerpt">Terminy w KSeF są ściśle określone. Opóźnienie grozi utratą prawa do odliczenia VAT i karami skarbowymi. Poznaj zasady i unikaj problemów.</p>
+            <div class="tags"><span class="tag">terminy</span><span class="tag">VAT</span><span class="tag">15 dni</span></div>
+        </div>
+        
+        <div class="knowledge-item" data-keywords="wszystko przewodnik e-faktura">
+            <h3 class="knowledge-title"><a href="2026/02/01/wszystko-o-ksef-2026/">KSeF 2026 - wszystko co musisz wiedzieć</a></h3>
+            <p class="knowledge-excerpt">Kompletny przewodnik po Krajowym Systemie e-Faktur. Terminy, wymagania, najczęstsze błędy i jak się przygotować.</p>
+            <div class="tags"><span class="tag">przewodnik</span><span class="tag">e-faktura</span><span class="tag">kompletny</span></div>
+        </div>
+    </div>
 
     <footer>
-        <p>📚 KSeF Blog - Otwarty projekt o KSeF</p>
+        <p>📚 KSeF Blog - Twoje centrum wiedzy o KSeF</p>
         <p><a href="polityka-prywatnosci/">Polityka Prywatności</a> | <a href="o-nas/">O nas</a> | <a href="feed.xml">RSS</a></p>
     </footer>
 
     <script>
-    function searchArticles() {
-        const query = document.getElementById('search').value.toLowerCase().trim();
-        const articles = document.querySelectorAll('article');
-        const countEl = document.getElementById('results-count');
-        const noResultsEl = document.getElementById('no-results');
-        let visible = 0;
+    function showTab(tabId) {
+        // Update tabs
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        event.target.classList.add('active');
         
-        articles.forEach(article => {
-            const title = article.getAttribute('data-title') || '';
-            const tags = article.getAttribute('data-tags') || '';
-            const excerpt = article.querySelector('.excerpt').textContent.toLowerCase();
-            
-            const matches = query === '' || 
-                           title.includes(query) || 
-                           tags.includes(query) ||
-                           excerpt.includes(query);
-            
-            article.style.display = matches ? 'block' : 'none';
-            if (matches) visible++;
-        });
-        
-        if (query.length > 0) {
-            countEl.style.display = 'block';
-            countEl.textContent = `Znaleziono ${visible} artykułów dla "${query}"`;
-            noResultsEl.style.display = visible === 0 ? 'block' : 'none';
-        } else {
-            countEl.style.display = 'none';
-            noResultsEl.style.display = 'none';
-        }
+        // Update sections
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
     }
     
-    // Clear search on Escape
+    function searchAll() {
+        const query = document.getElementById('search').value.toLowerCase().trim();
+        const sections = ['news', 'guides', 'knowledge'];
+        
+        sections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            const items = section.querySelectorAll('[data-keywords]');
+            let visible = 0;
+            
+            items.forEach(item => {
+                const keywords = item.getAttribute('data-keywords') || '';
+                const excerpt = item.querySelector('p:not(.news-meta):not(.guide-excerpt):not(.knowledge-excerpt)')?.textContent.toLowerCase() || '';
+                const matches = query === '' || keywords.includes(query) || excerpt.includes(query);
+                item.style.display = matches ? 'block' : 'none';
+                if (matches) visible++;
+            });
+        });
+    }
+    
+    // Clear on Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             document.getElementById('search').value = '';
-            searchArticles();
+            searchAll();
         }
     });
     </script>

@@ -1,51 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>KSeF Blog - Odpowiadamy na pytania o KSeF</title>
+    <title>KSeF Blog - Newsy, Poradniki, Baza Wiedzy</title>
     <link>https://manfredpasm-crypto.github.io/ksef-blog/</link>
-    <description>Otwórz blog o KSeF. Proste odpowiedzi na pytania o Krajowy System e-Faktur.</description>
+    <description>Kompletne źródło wiedzy o KSeF. Newsy, poradniki i baza artykułów.</description>
     <language>pl</language>
-    <lastBuildDate>Mon, 02 Feb 2026 18:25:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Feb 2026 18:30:00 GMT</lastBuildDate>
     <atom:link href="https://manfredpasm-crypto.github.io/ksef-blog/feed.xml" rel="self" type="application/rss+xml"/>
     
+    <!-- Latest news -->
     <item>
-      <title>Faktura korygująca w KSeF 2026 - jak wystawić?</title>
-      <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/faktura-korygujaca-ksef/</link>
-      <description>Przekroczyłeś 7-dniowy termin na anulowanie faktury? W KSeF możesz wystawić fakturę korygującą. Dowiedz się jak to zrobić.</description>
-      <pubDate>Mon, 02 Feb 2026 14:32:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/faktura-korygujaca-ksef/</guid>
+      <title>KSeF obowiązkowy od 1 lutego 2026</title>
+      <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/01/wszystko-o-ksef-2026/</link>
+      <description>Od 1 lutego 2026 roku Krajowy System e-Faktur staje się obowiązkowy dla wszystkich przedsiębiorców.</description>
+      <pubDate>Sun, 01 Feb 2026 12:00:00 GMT</pubDate>
+      <category>Newsy</category>
     </item>
     
+    <item>
+      <title>Terminy wystawienia faktur w KSeF</title>
+      <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-termin-wystawienia/</link>
+      <description>Terminy w KSeF są ściśle określone. Opóźnienie grozi utratą prawa do odliczenia VAT.</description>
+      <pubDate>Mon, 02 Feb 2026 14:40:00 GMT</pubDate>
+      <category>Newsy</category>
+    </item>
+    
+    <!-- Guides -->
     <item>
       <title>Jak anulować fakturę w KSeF?</title>
       <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/jak-anulowac-fakture-ksef/</link>
-      <description>Wystawiłeś fakturę przez pomyłkę? Anulowanie jest możliwe, ale musisz działać szybko. Poznaj zasady anulowania w KSeF.</description>
+      <description>Krok po kroku instrukcja anulowania faktury w KSeF. Poznaj 7-dniowy limit.</description>
       <pubDate>Mon, 02 Feb 2026 14:30:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/jak-anulowac-fakture-ksef/</guid>
+      <category>Poradniki</category>
     </item>
     
     <item>
-      <title>KSeF archiwizacja - czy zastępuje papierowe archiwum?</title>
+      <title>Faktura korygująca w KSeF - jak wystawić?</title>
+      <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/faktura-korygujaca-ksef/</link>
+      <description>Gdy minie termin anulowania, wystaw fakturę korygującą. Dowiedz się jak to zrobić poprawnie.</description>
+      <pubDate>Mon, 02 Feb 2026 14:32:00 GMT</pubDate>
+      <category>Poradniki</category>
+    </item>
+    
+    <!-- Knowledge Base -->
+    <item>
+      <title>KSeF 2026 - wszystko co musisz wiedzieć</title>
+      <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/01/wszystko-o-ksef-2026/</link>
+      <description>Kompletny przewodnik po Krajowym Systemie e-Faktur. Terminy, wymagania, najczęstsze błędy.</description>
+      <pubDate>Sun, 01 Feb 2026 12:00:00 GMT</pubDate>
+      <category>Baza Wiedzy</category>
+    </item>
+    
+    <item>
+      <title>Archiwizacja dokumentów w KSeF</title>
       <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-archiwizacja/</link>
-      <description>KSeF zmienia zasady przechowywania faktur. Czy system elektroniczny zastępuje tradycyjne archiwum papierowe?</description>
+      <description>Czy KSeF zastępuje papierowe archiwum? Jak długo przechowywać faktury elektroniczne?</description>
       <pubDate>Mon, 02 Feb 2026 14:33:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-archiwizacja/</guid>
+      <category>Baza Wiedzy</category>
     </item>
     
     <item>
       <title>KSeF dla biur rachunkowych</title>
       <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-biura-rachunkowe/</link>
-      <description>KSeF rewolucjonizuje pracę biur rachunkowych. Nowe obowiązki, procedury i odpowiedzialności.</description>
+      <description>Jak biura rachunkowe mogą korzystać z KSeF w imieniu klientów? Pełnomocnictwa i procedury.</description>
       <pubDate>Mon, 02 Feb 2026 14:34:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-biura-rachunkowe/</guid>
+      <category>Baza Wiedzy</category>
     </item>
     
     <item>
       <title>KSeF a faktury zagraniczne</title>
       <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-faktury-zagraniczne/</link>
-      <description>Czy faktury z zagranicy trzeba wysyłać do KSeF? Dowiedz się jak rozliczać faktury zagraniczne.</description>
+      <description>Czy faktury z zagranicy trzeba wysyłać do KSeF? Jak rozliczać faktury importowe?</description>
       <pubDate>Mon, 02 Feb 2026 14:35:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-faktury-zagraniczne/</guid>
+      <category>Baza Wiedzy</category>
     </item>
     
     <item>
@@ -53,23 +80,23 @@
       <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-jednoosobowa-dzialalnosc/</link>
       <description>Jednoosobowa działalność = pełne obowiązki KSeF. Nie ma ulg dla małych firm.</description>
       <pubDate>Mon, 02 Feb 2026 14:36:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-jednoosobowa-dzialalnosc/</guid>
+      <category>Baza Wiedzy</category>
     </item>
     
     <item>
       <title>KSeF korekty faktur - procedura</title>
       <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-korekty-faktur/</link>
-      <description>Błąd na fakturze w KSeF? System pozwala na korektę. Poznaj procedurę krok po kroku.</description>
+      <description>Błąd na fakturze? System pozwala na korektę. Poznaj procedurę krok po kroku.</description>
       <pubDate>Mon, 02 Feb 2026 14:37:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-korekty-faktur/</guid>
+      <category>Baza Wiedzy</category>
     </item>
     
     <item>
       <title>KSeF a paragony fiskalne</title>
       <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-paragony-fiskalne/</link>
-      <description>Paragony fiskalne i KSeF to dwa różne światy. Co się zmienia w 2026 roku?</description>
+      <description>Paragony fiskalne i KSeF to dwa różne światy. Co się zmienia w 2026?</description>
       <pubDate>Mon, 02 Feb 2026 14:38:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-paragony-fiskalne/</guid>
+      <category>Baza Wiedzy</category>
     </item>
     
     <item>
@@ -77,23 +104,7 @@
       <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-split-payment/</link>
       <description>Split payment i KSeF to dwa osobne systemy. Jak ze sobą współpracują?</description>
       <pubDate>Mon, 02 Feb 2026 14:39:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-split-payment/</guid>
-    </item>
-    
-    <item>
-      <title>KSeF terminy wystawienia faktur</title>
-      <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-termin-wystawienia/</link>
-      <description>Terminy w KSeF są ściśle określone. Opóźnienie grozi utratą prawa do odliczenia VAT.</description>
-      <pubDate>Mon, 02 Feb 2026 14:40:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/02/ksef-termin-wystawienia/</guid>
-    </item>
-    
-    <item>
-      <title>KSeF 2026 - wszystko co musisz wiedzieć</title>
-      <link>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/01/wszystko-o-ksef-2026/</link>
-      <description>Od 1 lutego 2026 KSeF staje się obowiązkowy. Kompletny przewodnik po zmianach.</description>
-      <pubDate>Sun, 01 Feb 2026 12:00:00 GMT</pubDate>
-      <guid>https://manfredpasm-crypto.github.io/ksef-blog/2026/02/01/wszystko-o-ksef-2026/</guid>
+      <category>Baza Wiedzy</category>
     </item>
   </channel>
 </rss>
