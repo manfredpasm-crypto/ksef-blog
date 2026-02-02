@@ -1,12 +1,12 @@
 # KSeF Blog - Jekyll Configuration
 title: "KSeF Blog"
-description: "Kompletny przewodnik po Krajowym Systemie e-Faktur dla przedsiębiorców"
-baseurl: ""
+description: "Odpowiadamy na wszystkie pytania o KSeF"
+baseurl: "/ksef-blog"
 url: "https://manfredpasm-crypto.github.io"
 
 # Author
 author:
-  name: "KSeF Expert"
+  name: "KSeF Blog"
   email: "manfredpasm@gmail.com"
 
 # Build settings
@@ -22,10 +22,6 @@ plugins:
 twitter_username: ksef_blog
 github_username: ksef-blog
 
-# Pagination
-paginate: 10
-paginate_path: "/page:num/"
-
 # Collections
 collections:
   posts:
@@ -39,7 +35,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "KSeF Expert"
+      author: "KSeF Blog"
       comments: true
   - scope:
       path: ""
