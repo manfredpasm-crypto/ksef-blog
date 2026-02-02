@@ -1,131 +1,144 @@
-/* KSeF Blog - Custom Styles */
-
-:root {
-  --primary-color: #2563eb;
-  --secondary-color: #1e40af;
-  --text-color: #374151;
-  --light-bg: #f9fafb;
-  --border-color: #e5e7eb;
-}
+/* KSeF Blog - Medium Style */
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 20px;
   line-height: 1.6;
-  color: var(--text-color);
-  max-width: 1200px;
+  color: rgba(0, 0, 0, 0.84);
+  max-width: 680px;
   margin: 0 auto;
   padding: 0 20px;
+  background: #fff;
 }
 
 .site-header {
-  border-bottom: 1px solid var(--border-color);
-  padding: 20px 0;
-  margin-bottom: 40px;
+  padding: 40px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 60px;
 }
 
 .site-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--primary-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #000;
   text-decoration: none;
+  letter-spacing: -0.5px;
 }
 
-.site-nav {
-  float: right;
-}
-
-.site-nav a {
-  margin-left: 20px;
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-.site-nav a:hover {
-  color: var(--primary-color);
+.page-content {
+  min-height: 400px;
 }
 
 .post-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .post-list li {
-  margin-bottom: 30px;
-  padding: 20px;
-  background: var(--light-bg);
-  border-radius: 8px;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.post-list li:last-child {
+  border-bottom: none;
 }
 
 .post-meta {
-  color: #6b7280;
-  font-size: 0.9rem;
-}
-
-.post-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: 1.3rem;
-}
-
-.post-link:hover {
-  text-decoration: underline;
-}
-
-.tag {
-  display: inline-block;
-  background: var(--primary-color);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  margin-right: 8px;
-}
-
-.post-content h2 {
-  color: var(--secondary-color);
-  margin-top: 40px;
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 10px;
-}
-
-.post-content h3 {
-  color: var(--primary-color);
-  margin-top: 30px;
-}
-
-.post-content ul {
-  padding-left: 20px;
-}
-
-.post-content li {
+  color: rgba(0, 0, 0, 0.54);
+  font-family: -apple-system, sans-serif;
+  font-size: 14px;
   margin-bottom: 8px;
 }
 
-.site-footer {
-  border-top: 1px solid var(--border-color);
-  padding: 20px 0;
-  margin-top: 40px;
-  text-align: center;
-  color: #6b7280;
+.post-link {
+  color: rgba(0, 0, 0, 0.84);
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  display: block;
+  margin-bottom: 12px;
 }
 
-.intro {
-  font-size: 1.1rem;
-  background: var(--light-bg);
-  padding: 20px;
-  border-radius: 8px;
+.post-link:hover {
+  color: #000;
+}
+
+.post-excerpt {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.post-content h2 {
+  font-family: -apple-system, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.post-content h3 {
+  font-family: -apple-system, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.post-content p {
   margin-bottom: 30px;
 }
 
+.post-content ul, .post-content ol {
+  margin-bottom: 30px;
+  padding-left: 30px;
+}
+
+.post-content li {
+  margin-bottom: 12px;
+}
+
+.post-content a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(0,0,0,0.3);
+}
+
+.post-content a:hover {
+  text-decoration-color: rgba(0,0,0,0.6);
+}
+
+.site-footer {
+  margin-top: 80px;
+  padding: 40px 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+  font-family: -apple-system, sans-serif;
+  font-size: 14px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.intro {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.54);
+  margin-bottom: 60px;
+  text-align: center;
+}
+
 @media (max-width: 600px) {
-  .site-nav {
-    float: none;
-    display: block;
-    margin-top: 10px;
+  body {
+    font-size: 18px;
+    padding: 0 16px;
   }
   
-  .site-nav a {
-    margin-left: 0;
-    margin-right: 15px;
+  .post-link {
+    font-size: 24px;
   }
 }
