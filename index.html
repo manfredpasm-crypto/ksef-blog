@@ -4,101 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KSeF Blog - Odpowiadamy na pytania o KSeF</title>
+    <meta name="description" content="Otwórz blog o KSeF. Proste odpowiedzi na pytania o Krajowy System e-Faktur.">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f9f9f9; }
-        header { background: #fff; padding: 30px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
-        h1 { margin: 0 0 10px; color: #222; }
-        .subtitle { color: #666; font-style: italic; }
-        article { background: #fff; padding: 20px; margin-bottom: 15px; border-radius: 8px; }
-        article h2 { margin: 0 0 10px; }
-        article h2 a { color: #222; text-decoration: none; }
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f9f9f9; line-height: 1.6; }
+        header { background: #fff; padding: 30px; border-radius: 12px; margin-bottom: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        h1 { margin: 0 0 8px; color: #222; font-size: 28px; }
+        .subtitle { color: #666; font-style: italic; margin: 0 0 20px; }
+        
+        /* Search box */
+        .search-box { margin: 20px auto; max-width: 500px; position: relative; }
+        .search-box input { 
+            width: 100%; padding: 14px 24px; font-size: 16px; 
+            border: 2px solid #e0e0e0; border-radius: 30px; outline: none;
+            transition: all 0.3s; background: #fafafa;
+        }
+        .search-box input:focus { border-color: #0066cc; background: #fff; box-shadow: 0 0 0 4px rgba(0,102,204,0.1); }
+        .search-box input::placeholder { color: #aaa; }
+        .search-hint { font-size: 12px; color: #999; margin-top: 8px; }
+        
+        /* Results */
+        .results-count { 
+            display: none; padding: 12px 16px; background: #e8f0fe; 
+            color: #0066cc; border-radius: 8px; margin-bottom: 15px;
+            font-size: 14px; text-align: center;
+        }
+        .no-results {
+            display: none; padding: 30px; background: #fff; 
+            border-radius: 8px; text-align: center; color: #666;
+        }
+        
+        article { background: #fff; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); transition: all 0.2s; }
+        article:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        article h2 { margin: 0 0 8px; font-size: 20px; }
+        article h2 a { color: #222; text-decoration: none; transition: color 0.2s; }
         article h2 a:hover { color: #0066cc; }
         .meta { color: #999; font-size: 13px; margin-bottom: 10px; }
-        .excerpt { color: #555; line-height: 1.6; }
-        .tags { margin-top: 10px; }
-        .tag { background: #e8f0fe; color: #0066cc; padding: 3px 10px; border-radius: 12px; font-size: 12px; margin-right: 5px; }
-        footer { text-align: center; padding: 30px; color: #999; margin-top: 30px; }
-        footer a { color: #666; }
+        .excerpt { color: #555; font-size: 15px; }
+        .tags { margin-top: 12px; }
+        .tag { display: inline-block; background: #e8f0fe; color: #0066cc; padding: 4px 12px; border-radius: 15px; font-size: 12px; margin-right: 6px; margin-bottom: 4px; }
+        
+        footer { text-align: center; padding: 30px 20px; color: #999; margin-top: 30px; border-top: 1px solid #eee; }
+        footer a { color: #666; text-decoration: none; }
+        footer a:hover { color: #0066cc; }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            header { padding: 20px; }
+            h1 { font-size: 24px; }
+            article { padding: 15px; }
+            article h2 { font-size: 18px; }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>KSeF Blog</h1>
+        <h1>🔍 KSeF Blog</h1>
         <p class="subtitle">Odpowiadamy na wszystkie pytania o Krajowy System e-Faktur</p>
+        
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Szukaj... (np. anulowanie, faktura, VAT, JDG)" onkeyup="searchArticles()" autofocus>
+            <p class="search-hint">Wpisz słowo kluczowe, aby znaleźć artykuł</p>
+        </div>
+        <p class="results-count" id="results-count"></p>
+        <p class="no-results" id="no-results">Nie znaleziono artykułów dla tego zapytania. Spróbuj inne słowo kluczowe.</p>
     </header>
 
-    <main>
-        <article>
+    <main id="articles">
+        <article data-title="faktura korygująca korekta vat anulowanie" data-tags="faktura korygująca korekt vat fa korekta">
             <h2><a href="2026/02/02/faktura-korygujaca-ksef/">Faktura korygująca w KSeF 2026 - jak wystawić?</a></h2>
             <p class="meta">2 lutego 2026</p>
             <p class="excerpt">Przekroczyłeś 7-dniowy termin na anulowanie faktury? W KSeF możesz wystawić fakturę korygującą...</p>
-            <div class="tags"><span class="tag">faktura-korygująca</span><span class="tag">korekta VAT</span></div>
+            <div class="tags"><span class="tag">faktura korygująca</span><span class="tag">korekta VAT</span></div>
         </article>
 
-        <article>
+        <article data-title="anulowanie faktury błąd pomyłka" data-tags="anulowanie faktura błąd pomyłka szkic">
             <h2><a href="2026/02/02/jak-anulowac-fakture-ksef/">Jak anulować fakturę w KSeF?</a></h2>
             <p class="meta">2 lutego 2026</p>
             <p class="excerpt">Wystawiłeś fakturę przez pomyłkę? Anulowanie jest możliwe, ale musisz działać szybko...</p>
             <div class="tags"><span class="tag">anulowanie</span><span class="tag">e-faktura</span></div>
         </article>
 
-        <article>
+        <article data-title="archiwizacja dokumenty przechowywanie papier" data-tags="archiwizacja dokumenty przechowywanie papier 10 lat">
             <h2><a href="2026/02/02/ksef-archiwizacja/">KSeF archiwizacja - czy zastępuje papierowe archiwum?</a></h2>
             <p class="meta">2 lutego 2026</p>
             <p class="excerpt">KSeF zmienia zasady przechowywania faktur. Czy system elektroniczny zastępuje tradycyjne archiwum?</p>
             <div class="tags"><span class="tag">archiwizacja</span><span class="tag">dokumenty</span></div>
         </article>
 
-        <article>
+        <article data-title="biura rachunkowe księgowy usługi" data-tags="biura rachunkowe księgowy usługi pełnomocnictwo">
             <h2><a href="2026/02/02/ksef-biura-rachunkowe/">KSeF dla biur rachunkowych</a></h2>
             <p class="meta">2 lutego 2026</p>
             <p class="excerpt">KSeF rewolucjonizuje pracę biur rachunkowych. Nowe obowiązki i procedury...</p>
-            <div class="tags"><span class="tag">biura-rachunkowe</span><span class="tag">księgowość</span></div>
+            <div class="tags"><span class="tag">biura rachunkowe</span><span class="tag">księgowość</span></div>
         </article>
 
-        <article>
+        <article data-title="faktury zagraniczne import export ue" data-tags="faktury zagraniczne import export ue handel zagraniczny">
             <h2><a href="2026/02/02/ksef-faktury-zagraniczne/">KSeF a faktury zagraniczne</a></h2>
             <p class="meta">2 lutego 2026</p>
             <p class="excerpt">Czy faktury z zagranicy trzeba wysyłać do KSeF? Dowiedz się jak rozliczać faktury zagraniczne...</p>
-            <div class="tags"><span class="tag">handel-zagraniczny</span><span class="tag">import</span></div>
+            <div class="tags"><span class="tag">handel zagraniczny</span><span class="tag">import</span></div>
         </article>
 
-        <article>
+        <article data-title="jednoosobowa działalność jdg firma" data-tags="jednoosobowa działalność jdg firma mała firma">
             <h2><a href="2026/02/02/ksef-jednoosobowa-dzialalnosc/">KSeF dla jednoosobowej działalności</a></h2>
             <p class="meta">2 lutego 2026</p>
             <p class="excerpt">Jednoosobowa działalność = pełne obowiązki KSeF. Nie ma ulg dla małych firm...</p>
             <div class="tags"><span class="tag">JDG</span><span class="tag">firma</span></div>
         </article>
 
-        <article>
+        <article data-title="korekty faktur błąd procedura" data-tags="korekty faktur błąd procedura fa korekta">
             <h2><a href="2026/02/02/ksef-korekty-faktur/">KSeF korekty faktur - procedura</a></h2>
             <p class="meta">2 lutego 2026</p>
             <p class="excerpt">Błąd na fakturze w KSeF? System pozwala na korektę, ale procedura różni się od tradycyjnej...</p>
             <div class="tags"><span class="tag">korekta</span><span class="tag">błąd</span></div>
         </article>
 
-        <article>
+        <article data-title="paragony fiskalne kasa" data-tags="paragony fiskalne kasa fiskalna paragon">
             <h2><a href="2026/02/02/ksef-paragony-fiskalne/">KSeF a paragony fiskalne</a></h2>
             <p class="meta">2 lutego 2026</p>
             <p class="excerpt">Paragony fiskalne i KSeF to dwa różne światy. Co się zmienia w 2026?</p>
-            <div class="tags"><span class="tag">paragon</span><span class="tag">kasa-fiskalna</span></div>
+            <div class="tags"><span class="tag">paragon</span><span class="tag">kasa fiskalna</span></div>
         </article>
 
-        <article>
+        <article data-title="split payment podzielona płatność vat" data-tags="split payment podzielona płatność vat mpp">
             <h2><a href="2026/02/02/ksef-split-payment/">KSeF a split payment</a></h2>
             <p class="meta">2 lutego 2026</p>
             <p class="excerpt">Split payment i KSeF to dwa osobne systemy. Jak ze sobą współpracują?</p>
-            <div class="tags"><span class="tag">split-payment</span><span class="tag">płatności</span></div>
+            <div class="tags"><span class="tag">split payment</span><span class="tag">płatności</span></div>
         </article>
 
-        <article>
+        <article data-title="terminy wystawienia faktury 15 dni" data-tags="terminy wystawienia 15 dni data vat">
             <h2><a href="2026/02/02/ksef-termin-wystawienia/">KSeF terminy wystawienia faktur</a></h2>
             <p class="meta">2 lutego 2026</p>
             <p class="excerpt">Terminy w KSeF są ściśle określone. Opóźnienie grozi utratą prawa do odliczenia VAT...</p>
             <div class="tags"><span class="tag">terminy</span><span class="tag">VAT</span></div>
         </article>
 
-        <article>
+        <article data-title="przewodnik wszystko e-faktura luty 2026" data-tags="przewodnik wszystko e-faktura luty 2026 obowiązkowy">
             <h2><a href="2026/02/01/wszystko-o-ksef-2026/">KSeF 2026 - wszystko co musisz wiedzieć</a></h2>
             <p class="meta">1 lutego 2026</p>
             <p class="excerpt">Od 1 lutego 2026 KSeF staje się obowiązkowy. Sprawdź co to oznacza dla Twojej firmy...</p>
@@ -107,9 +151,49 @@
     </main>
 
     <footer>
-        <p>KSeF Blog - Otwarty projekt o KSeF</p>
-        <p><a href="polityka-prywatnosci/">Polityka Prywatności</a> | <a href="o-nas/">O nas</a></p>
+        <p>📚 KSeF Blog - Otwarty projekt o KSeF</p>
+        <p><a href="polityka-prywatnosci/">Polityka Prywatności</a> | <a href="o-nas/">O nas</a> | <a href="feed.xml">RSS</a></p>
     </footer>
+
+    <script>
+    function searchArticles() {
+        const query = document.getElementById('search').value.toLowerCase().trim();
+        const articles = document.querySelectorAll('article');
+        const countEl = document.getElementById('results-count');
+        const noResultsEl = document.getElementById('no-results');
+        let visible = 0;
+        
+        articles.forEach(article => {
+            const title = article.getAttribute('data-title') || '';
+            const tags = article.getAttribute('data-tags') || '';
+            const excerpt = article.querySelector('.excerpt').textContent.toLowerCase();
+            
+            const matches = query === '' || 
+                           title.includes(query) || 
+                           tags.includes(query) ||
+                           excerpt.includes(query);
+            
+            article.style.display = matches ? 'block' : 'none';
+            if (matches) visible++;
+        });
+        
+        if (query.length > 0) {
+            countEl.style.display = 'block';
+            countEl.textContent = `Znaleziono ${visible} artykułów dla "${query}"`;
+            noResultsEl.style.display = visible === 0 ? 'block' : 'none';
+        } else {
+            countEl.style.display = 'none';
+            noResultsEl.style.display = 'none';
+        }
+    }
+    
+    // Clear search on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.getElementById('search').value = '';
+            searchArticles();
+        }
+    });
+    </script>
 </body>
 </html>
-<!-- redeploy test Mon Feb  2 18:19:11 UTC 2026 -->
