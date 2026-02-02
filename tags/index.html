@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<div class="tags-page">
+  <h1>Artykuły według tagów</h1>
+  
+  <div class="tags-list">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      <div class="tag-group">
+        <h2>{{ tag[0] }}</h2>
+        <ul>
+          {% for post in tag[1] %}
+            <li>
+              <span class="date">{{ post.date | date: "%d.%m.%Y" }}</span>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <p><a href="/ksef-blog/">← Wróć do strony głównej</a></p>
+</div>
+
+<style>
+.tags-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tags-page h1 {
+  margin-bottom: 30px;
+}
+
+.tag-group {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tag-group h2 {
+  font-size: 18px;
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+.tag-group ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tag-group li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.tag-group .date {
+  color: #999;
+  font-size: 13px;
+  width: 80px;
+}
+
+.tag-group a {
+  color: #333;
+  text-decoration: none;
+}
+
+.tag-group a:hover {
+  color: #0066cc;
+}
+</style>
