@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSeF Checklist 2026 - Kompletna Lista Kontrolna</title>
+    <meta name="description" content="Darmowy checklist wdrożenia KSeF. Wszystko co musisz wiedzieć o Krajowym Systemie e-Faktur.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0066cc, #0052a3);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 36px; margin-bottom: 15px; }
+        header p { font-size: 18px; opacity: 0.9; }
+        
+        /* Success Banner */
+        .success-banner {
+            background: #27ae60;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            display: none;
+        }
+        
+        /* Content */
+        .content { background: white; padding: 40px; border-radius: 12px; margin: -30px auto 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .content h2 { color: #0066cc; margin: 30px 0 15px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
+        .content h3 { color: #333; margin: 25px 0 12px; }
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+            accent-color: #0066cc;
+        }
+        .checklist-item label { cursor: pointer; }
+        .checklist-item ul { margin: 10px 0 10px 35px; }
+        .checklist-item li { margin: 5px 0; color: #666; font-size: 14px; }
+        
+        /* Download Section */
+        .download-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .download-section h3 { margin-bottom: 15px; }
+        .download-btn {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        .download-btn:hover { background: #0052a3; }
+        .download-btn.secondary { background: #6c757d; }
+        
+        /* Table */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        th { background: #f8f9fa; font-weight: 600; }
+        
+        /* Footer */
+        footer { text-align: center; padding: 30px 20px; color: #666; font-size: 14px; }
+        footer a { color: #0066cc; }
+        
+        @media (max-width: 600px) {
+            header h1 { font-size: 28px; }
+            .content { padding: 25px; }
+            .download-btn { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>✅ KSeF Checklist 2026</h1>
+        <p>Kompletna lista kontrolna wdrożenia Krajowego Systemu e-Faktur</p>
+    </header>
+    
+    <div class="success-banner" id="successBanner">
+        🎉 Dziękujemy za subskrypcję! Oto Twój checklist.
+    </div>
+    
+    <div class="container">
+        <div class="content">
+            <p style="font-size: 16px; margin-bottom: 25px;">
+                Ten checklist zawiera wszystko, czego potrzebujesz, aby prawidłowo wdrożyć KSeF w swojej firmie. 
+                Zaznaczaj postępy w miarę realizacji!
+            </p>
+            
+            <!-- Section 1 -->
+            <h2>1. Przed rozpoczęciem</h2>
+            <div class="checklist-item">
+                <input type="checkbox" id="c1_1">
+                <label for="c1_1">
+                    <strong>Wymagania prawne</strong>
+                    <ul>
+                        <li>Posiadam NIP i REGON</li>
+                        <li>Mam konto w ePUAP (profil zaufany)</li>
+                        <li>Znam numer telefonu do autentykacji</li>
+                    </ul>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="c1_2">
+                <label for="c1_2">
+                    <strong>Wymagania techniczne</strong>
+                    <ul>
+                        <li>Stabilne połączenie internetowe</li>
+                        <li>Przeglądarka: Chrome 90+, Firefox 88+</li>
+                        <li>Włączona obsługa JavaScript i cookies</li>
+                    </ul>
+                </label>
+            </div>
+            
+            <!-- Section 2 -->
+            <h2>2. Rejestracja i logowanie</h2>
+            <div class="checklist-item">
+                <input type="checkbox" id="c2_1">
+                <label for="c2_1">
+                    <strong>Pierwsze logowanie</strong>
+                    <ul>
+                        <li>Wybierz metodę: Profil zaufany / e-dowód / MojeID</li>
+                        <li>Podaj numer telefonu do autentykacji SMS</li>
+                        <li>Ustaw powiadomienia email/SMS</li>
+                    </ul>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="c2_2">
+                <label for="c2_2">
+                    <strong>Dalsze logowania</strong>
+                    <ul>
+                        <li>Zapamiętaj metodę logowania</li>
+                        <li>Dodaj KSeF do zakładek</li>
+                    </ul>
+                </label>
+            </div>
+            
+            <!-- Section 3 -->
+            <h2>3. Wystawianie faktur</h2>
+            <div class="checklist-item">
+                <input type="checkbox" id="c3_1">
+                <label for="c3_1">
+                    <strong>Przed wystawieniem</strong>
+                    <ul>
+                        <li>Sprawdź dane nabywcy (NIP, adres)</li>
+                        <li>Ustaw stawkę VAT (23%, 8%, 5%, 0%, NP)</li>
+                        <li>Przygotuj kod PKWiU (jeśli wymagany)</li>
+                    </ul>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="c3_2">
+                <label for="c3_2">
+                    <strong>Wystawianie krok po kroku</strong>
+                    <ul>
+                        <li>Kliknij "Nowa faktura" → wybierz typ</li>
+                        <li>Wprowadź dane nabywcy</li>
+                        <li>Dodaj pozycje (nazwa, ilość, cena netto)</li>
+                        <li>Wybierz stawkę VAT</li>
+                        <li>Ustaw płatność (metoda, termin)</li>
+                        <li>Kliknij "Sprawdź" → "Podpisz i wyślij"</li>
+                    </ul>
+                </label>
+            </div>
+            
+            <!-- Section 4 -->
+            <h2>4. Anulowanie i korekty</h2>
+            <div class="checklist-item">
+                <input type="checkbox" id="c4_1">
+                <label for="c4_1">
+                    <strong>Anulowanie (do 7 dni)</strong>
+                    <ul>
+                        <li>Warunek: minęło &lt; 7 dni od wystawienia</li>
+                        <li>Znajdź fakturę w "Moje faktury"</li>
+                        <li>Kliknij "Anuluj" → potwierdź</li>
+                    </ul>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="c4_2">
+                <label for="c4_2">
+                    <strong>Faktura korygująca (po 7 dniach)</strong>
+                    <ul>
+                        <li>Kliknij "Nowa faktura korygująca"</li>
+                        <li>Wybierz fakturę do skorygowania</li>
+                        <li>Wprowadź zmiany → dodaj opis korekty</li>
+                        <li>Podpisz i wyślij</li>
+                    </ul>
+                </label>
+            </div>
+            
+            <!-- Section 5 -->
+            <h2>5. Archiwizacja</h2>
+            <div class="checklist-item">
+                <input type="checkbox" id="c5_1">
+                <label for="c5_1">
+                    <strong>Co archiwizować</strong>
+                    <ul>
+                        <li>Wszystkie faktury wychodzące i przychodzące</li>
+                        <li>Faktury korygujące i zaświadczenia o anulowaniu</li>
+                    </ul>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="c5_2">
+                <label for="c5_2">
+                    <strong>Jak długo przechowywać</strong>
+                    <ul>
+                        <li>Faktury VAT: 5 lat od końca roku podatkowego</li>
+                        <li>Faktury bez VAT: 2 lata (zalecane)</li>
+                    </ul>
+                </label>
+            </div>
+            
+            <!-- Section 6 -->
+            <h2>6. Najczęstsze błędy i rozwiązania</h2>
+            <table>
+                <tr><th>Błąd</th><th>Rozwiązanie</th></tr>
+                <tr><td>"Błąd 404"</td><td>Odśwież stronę, sprawdź połączenie</td></tr>
+                <tr><td>"Niepoprawny NIP"</td><td>Sprawdź NIP w GUS</td></tr>
+                <tr><td>Zła stawka VAT</td><td>Zweryfikuj stawkę dla towaru/usługi</td></tr>
+                <tr><td>Brak autoryzacji</td><td>Zaloguj się ponownie</td></tr>
+            </table>
+            
+            <!-- Download Section -->
+            <div class="download-section">
+                <h3>📥 Pobierz Checklist</h3>
+                <p style="color: #666; margin-bottom: 20px;">Zapisz checklist na dysku i korzystaj offline!</p>
+                <a href="checklist-ksef-2026.pdf" class="download-btn" download>📄 PDF do druku</a>
+                <a href="CHECKLIST_CONTENT.md" class="download-btn secondary" download>📋 Markdown</a>
+            </div>
+            
+            <!-- Useful Links -->
+            <h2>🔗 Przydatne linki</h2>
+            <ul>
+                <li><a href="https://ksef.mf.gov.pl" target="_blank">Portal KSeF</a></li>
+                <li><a href="https://www.gov.pl/web/finanse" target="_blank">Ministerstwo Finansów</a></li>
+                <li>Infolinia: 800 007 007 (bezpłatna)</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>© 2026 KSeF Blog | <a href="https://ksef-blog.vercel.app">Wróć do bloga</a></p>
+        </footer>
+    </div>
+    
+    <script>
+        // Show success banner
+        document.getElementById('successBanner').style.display = 'block';
+        
+        // Save checkbox state to localStorage
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            const id = checkbox.id;
+            const saved = localStorage.getItem('ksef_checklist_' + id);
+            if (saved === 'true') checkbox.checked = true;
+            
+            checkbox.addEventListener('change', () => {
+                localStorage.setItem('ksef_checklist_' + id, checkbox.checked);
+            });
+        });
+    </script>
+</body>
+</html>

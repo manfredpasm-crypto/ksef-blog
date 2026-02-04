@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSeF Checklist 2026 - Darmowy Download</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        .badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        .checklist-preview {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 28px;
+        }
+        .checklist-preview h3 {
+            font-size: 14px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        .checklist-preview ul {
+            list-style: none;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+        .checklist-preview li {
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+        }
+        .checklist-preview li::before {
+            content: "✓";
+            color: #27ae60;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: #2c3e50;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        .privacy {
+            text-align: center;
+            font-size: 12px;
+            color: #95a5a6;
+            margin-top: 20px;
+        }
+        .privacy a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .success.show {
+            display: block;
+        }
+        .success-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        .form-content.hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Form -->
+        <div class="form-content">
+            <span class="badge">DARMOWY E-BOOK</span>
+            <h1>KSeF Checklist 2026</h1>
+            <p class="subtitle">Kompletna lista kontrolna wdrożenia Krajowego Systemu e-Faktur. Bądź gotowy przed terminem!</p>
+            
+            <div class="checklist-preview">
+                <h3>Co znajdziesz w checklist:</h3>
+                <ul>
+                    <li>Wymagania techniczne krok po kroku</li>
+                    <li>Lista dokumentów do przygotowania</li>
+                    <li>Harmonogram wdrożenia</li>
+                    <li>Najczęstsze błędy i jak ich unikać</li>
+                    <li>Przydatne linki i zasoby</li>
+                </ul>
+            </div>
+            
+            <form id="emailForm" action="https://us19.api.mailchimp.com/subscribe/post" method="POST">
+                <input type="hidden" name="u" value="cda18a9e9aa97eee444580f3fdf3b43d">
+                <input type="hidden" name="id" value="YOUR_LIST_ID">
+                
+                <div class="form-group">
+                    <label for="email">Adres email *</label>
+                    <input type="email" id="email" name="EMAIL" required placeholder="twoj@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Imię (opcjonalnie)</label>
+                    <input type="text" id="name" name="FNAME" placeholder="Twoje imię">
+                </div>
+                
+                <button type="submit">Pobierz Checklist Teraz →</button>
+            </form>
+            
+            <p class="privacy">
+                Zero spamu. Wypiszesz się w jednym kliknięciu.<br>
+                <a href="#">Polityka prywatności</a>
+            </p>
+        </div>
+        
+        <!-- Success -->
+        <div class="success" id="success">
+            <div class="success-icon">✅</div>
+            <h2>Dziękujemy!</h2>
+            <p style="color: #7f8c8d; margin-top: 12px;">
+                Sprawdź swoją skrzynkę - checklist już leci!<br>
+                <small style="color: #95a5a6;">Jeśli nie widzisz wiadomości, sprawdź folder SPAM.</small>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success
+            document.querySelector('.form-content').classList.add('hide');
+            document.getElementById('success').classList.add('show');
+            
+            // TODO: Send to Mailchimp via Make.com webhook
+            console.log('Email submitted:', document.getElementById('email').value);
+        });
+    </script>
+</body>
+</html>

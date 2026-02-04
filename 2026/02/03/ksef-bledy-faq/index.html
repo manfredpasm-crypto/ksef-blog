@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSeF Błędy - Lista i Rozwiązania | FAQ 2026</title>
+    <meta name="description" content="Najczęstsze błędy KSeF i ich rozwiązania. Praktyczny FAQ z kodami błędów, problemami z logowaniem, wysyłką faktur i integracją API. Pomoc techniczna KSeF.">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 750px; margin: 0 auto; padding: 20px; background: #f9f9f9; line-height: 1.7; }
+        article { background: #fff; padding: 30px; border-radius: 8px; }
+        h1 { color: #222; margin-bottom: 20px; }
+        h2 { color: #333; margin-top: 30px; }
+        h3 { color: #444; }
+        p { color: #555; }
+        a { color: #0066cc; }
+        .meta { color: #999; font-size: 14px; margin-bottom: 20px; }
+        .tags { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+        .tag { background: #e8f0fe; color: #0066cc; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin-right: 8px; }
+        footer { text-align: center; padding: 30px; color: #999; margin-top: 30px; }
+        footer a { color: #666; }
+        .error-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .solution-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        .warning-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <article>
+        <h1>KSeF Błędy - Lista i Rozwiązania</h1>
+        <p class="meta">2026-02-03 08:00:00 +0000</p>
+        <div class="content">
+
+<p>Przejście na Krajowy System e-Faktur to duża zmiana dla każdego przedsiębiorcy. Niestety, jak przy każdej nowej technologii, pojawiają się problemy techniczne, błędy i trudności w obsłudze. W tym artykule zebraliśmy najczęstsze błędy KSeF wraz z praktycznymi rozwiązaniami, które pomogą Ci szybko uporać się z problemami.</p>
+
+<h2>Błędy logowania do KSeF - najczęstsze problemy</h2>
+
+<p>Problemy z logowaniem to zdecydowanie najczęściej zgłaszane trudności przez przedsiębiorców. System KSeF wymaga autoryzacji przez Profil Zaufany, e-Dowód lub certyfikat kwalifikowany, co często sprawia problemy początkującym użytkownikom.</p>
+
+<h3>Błąd: "Nie można zweryfikować tożsamości użytkownika"</h3>
+
+<div class="error-box">
+<strong>Komunikat:</strong> "Nie można zweryfikować tożsamości użytkownika. Sprawdź poprawność danych lub skontaktuj się z administratorem."
+</div>
+
+<p>Ten błąd pojawia się najczęściej przy próbie logowania przez Profil Zaufany, gdy dane w systemie nie zgadzają się z danymi w KSeF.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Sprawdź, czy NIP w Profilu Zaufanym jest identyczny z NIP-em firmy, do której chcesz się zalogować</li>
+<li>Upewnij się, że masz uprawnienia do reprezentowania tego podmiotu w KSeF</li>
+<li>Wyczyść pamięć podręczną przeglądarki i spróbuj ponownie</li>
+<li>Użyj innej przeglądarki (zalecane: Chrome, Firefox w najnowszej wersji)</li>
+<li>Sprawdź, czy Twój Profil Zaufany jest aktywny i zweryfikowany</li>
+</ul>
+</div>
+
+<h3>Błąd: "Brak uprawnień do podmiotu"</h3>
+
+<div class="error-box">
+<strong>Komunikat:</strong> "Użytkownik nie posiada uprawnień do wybranego podmiotu."
+</div>
+
+<p>Ten problem występuje, gdy próbujesz uzyskać dostęp do firmy, dla której nie masz nadanych uprawnień w systemie KSeF.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Upewnij się, że reprezentujesz podmiot jako pełnomocnik w KSeF</li>
+<li>Sprawdź w ustawieniach KSeF, czy masz przypisane uprawnienia do tego NIP-u</li>
+<li>Jeśli jesteś wspólnikiem spółki, upewnij się, że Twoje dane są aktualne w KRS</li>
+<li>Skontaktuj się z administratorem KSeF w firmie, aby dodał Cię jako użytkownika</li>
+</ul>
+</div>
+
+<h3>Błąd: "Sesja wygasła" lub automatyczne wylogowanie</h3>
+
+<p>KSeF ma ograniczony czas sesji ze względów bezpieczeństwa. Jeśli pracujesz dłużej nad fakturą, system może Cię wylogować.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Zapisuj faktury jako wersje robocze co kilka minut</li>
+<li>Przed wysłaniem faktury upewnij się, że sesja jest aktywna</li>
+<li>Jeśli pracujesz nad wieloma fakturami, zaloguj się ponownie przed finalizacją</li>
+<li>Rozważ użycie API zamiast interfejsu webowego dla większej wygody</li>
+</ul>
+</div>
+
+<h2>Błędy przy wystawianiu i wysyłce faktur</h2>
+
+<p>Druga kategoria najczęstszych problemów to błędy pojawiające się w trakcie tworzenia i wysyłania faktur do KSeF. System jest bardzo restrykcyjny co do formatu i wymaganych pól.</p>
+
+<h3>Błąd: "Nieprawidłowy format pliku XML"</h3>
+
+<div class="error-box">
+<strong>Komunikat:</strong> "Przesłany plik nie spełnia wymagań struktury logicznej FA_VAT lub FA_VAT_E."
+</div>
+
+<p>KSeF wymaga ścisłego przestrzegania struktury XML określonej przez Ministerstwo Finansów. Nawet drobne odstępstwo powoduje odrzucenie faktury.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Upewnij się, że używasz aktualnej wersji schematu FA_VAT (sprawdź na stronie MF)</li>
+<li>Waliduj pliki XML przed wysłaniem za pomocą narzędzi walidacyjnych KSeF</li>
+<li>Sprawdź kodowanie pliku - powinno być UTF-8</li>
+<li>Upewnij się, że wszystkie wymagane pola są wypełnione</li>
+<li>Jeśli używasz programu księgowego, zaktualizuj go do najnowszej wersji</li>
+</ul>
+</div>
+
+<h3>Błąd: "Numer faktury już istnieje"</h3>
+
+<div class="error-box">
+<strong>Komunikat:</strong> "Faktura o podanym numerze już istnieje w systemie."
+</div>
+
+<p>KSeF nie pozwala na duplikaty numerów faktur w obrębie tego samego podmiotu. Każdy numer musi być unikalny.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Sprawdź, czy faktura o tym numerze nie została już wcześniej wysłana</li>
+<li>Użyj innego numeru faktury</li>
+<li>Jeśli to korekta, upewnij się, że numer zawiera oznaczenie korekty (np. KOR/2026/001)</li>
+<li>W przypadku importu z innego systemu, sprawdź konflikty numeracji</li>
+</ul>
+</div>
+
+<h3>Błąd: "Nieprawidłowy NIP kontrahenta"</h3>
+
+<div class="error-box">
+<strong>Komunikat:</strong> "Podany numer NIP nie jest zgodny z wzorcem lub nie istnieje w rejestrze."
+</div>
+
+<p>System KSeF weryfikuje NIP-y kontrahentów w czasie rzeczywistym. Błędny lub nieaktywny NIP spowoduje odrzucenie faktury.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Sprawdź poprawność NIP-u na stronie <a href="https://www.gov.pl/web/kas/sprawdz-nip">sprawdzanie NIP</a></li>
+<li>Upewnij się, że NIP nie zawiera spacji ani myślników w polu XML</li>
+<li>W przypadku kontrahentów zagranicznych, sprawdź czy używasz odpowiedniego prefiksu kraju</li>
+<li>Jeśli NIP jest nowy, odczekaj 24-48h na aktualizację rejestrów</li>
+</ul>
+</div>
+
+<h3>Błąd: "Data wystawienia faktury jest nieprawidłowa"</h3>
+
+<div class="error-box">
+<strong>Komunikat:</strong> "Data wystawienia faktury nie może być wcześniejsza niż data wymagalności KSeF dla tego podmiotu."
+</div>
+
+<p>Po wejściu w życie obowiązku KSeF dla danego podmiotu, wszystkie faktury muszą być wystawiane w systemie. Nie można wystawiać faktur poza KSeF z datą po terminie obowiązkowego stosowania.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Sprawdź datę obowiązkowego KSeF dla Twojej firmy</li>
+<li>Upewnij się, że data wystawienia faktury jest zgodna z rzeczywistą datą wystawienia</li>
+<li>Jeśli faktura dotyczy okresu przed KSeF, skonsultuj się z księgowym</li>
+<li>W przypadku błędu systemowego, zgłoś problem do helpdesk KSeF</li>
+</ul>
+</div>
+
+<h2>Błędy API i integracji</h2>
+
+<p>Firmy korzystające z API KSeF do masowej wysyłki faktur napotykają specyficzne problemy techniczne związane z komunikacją system-system.</p>
+
+<h3>Błąd 404 - "Nie znaleziono zasobu"</h3>
+
+<div class="error-box">
+<strong>Komunikat HTTP:</strong> 404 Not Found<br>
+<strong>Opis:</strong> Endpoint API nie istnieje lub jest nieosiągalny.
+</div>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Sprawdź, czy używasz poprawnego adresu URL API (środowisko produkcyjne vs testowe)</li>
+<li>Upewnij się, że wersja API jest obsługiwana (aktualnie: v1, v2)</li>
+<li>Sprawdź dokumentację API pod kątem zmian endpointów</li>
+<li>Zweryfikuj, czy Twój token API jest aktywny i nie wygasł</li>
+</ul>
+</div>
+
+<h3>Błąd 401/403 - "Brak autoryzacji"</h3>
+
+<div class="error-box">
+<strong>Komunikat HTTP:</strong> 401 Unauthorized / 403 Forbidden
+</div>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Sprawdź poprawność tokena API (musi być aktywny i nie wygasły)</li>
+<li>Upewnij się, że token ma odpowiednie uprawnienia (scope) dla wywoływanej operacji</li>
+<li>Wygeneruj nowy token w panelu KSeF jeśli obecny wygasł</li>
+<li>Sprawdź, czy IP z którego wywołujesz API jest na liście dozwolonych</li>
+</ul>
+</div>
+
+<h3>Błąd 429 - "Zbyt wiele żądań"</h3>
+
+<div class="error-box">
+<strong>Komunikat HTTP:</strong> 429 Too Many Requests
+</div>
+
+<p>KSeF ma ograniczenia rate limiting dla API. Przekroczenie limitu żądań skutkuje tymczasowym zablokowaniem.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Zaimplementuj mechanizm retry z wykładniczym backoff</li>
+<li>Zmniejsz częstotliwość wysyłania żądań</li>
+<li>Rozważ przetwarzanie wsadowe (batch) zamiast pojedynczych żądań</li>
+<li>Poczekaj kilka minut przed kolejną próbą</li>
+</ul>
+</div>
+
+<h3>Błąd 500/502/503 - Błędy serwera KSeF</h3>
+
+<div class="error-box">
+<strong>Komunikat HTTP:</strong> 500 Internal Server Error / 502 Bad Gateway / 503 Service Unavailable
+</div>
+
+<p>Błędy po stronie serwera KSeF zazwyczaj oznaczają przeciążenie systemu lub prace techniczne.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Sprawdź <a href="https://www.podatki.gov.pl/">status systemów MF</a> - może trwać przerwa techniczna</li>
+<li>Poczekaj 5-10 minut i spróbuj ponownie</li>
+<li>W przypadku błędu 503, sprawdź nagłówek Retry-After</li>
+<li>Jeśli problem trwa dłużej niż godzinę, zgłoś do helpdesk KSeF</li>
+</ul>
+</div>
+
+<h2>Błędy przy odbieraniu faktur</h2>
+
+<p>Nie tylko wysyłanie, ale i odbieranie faktur w KSeF może sprawiać problemy.</p>
+
+<h3>Błąd: "Faktura nie jest widoczna w skrzynce"</h3>
+
+<p>Czasami faktury wysłane przez kontrahentów nie pojawiają się od razu w Twojej skrzynce KSeF.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Poczekaj do 24h - faktury mogą pojawiać się z opóźnieniem</li>
+<li>Sprawdź folder "Wszystkie faktury" zamiast tylko "Nowe"</li>
+<li>Upewnij się, że kontrahent wysłał fakturę na poprawny NIP</li>
+<li>Sprawdź filtry wyszukiwania - może faktura jest przefiltrowana</li>
+<li>Skontaktuj się z kontrahentem, aby potwierdził wysłanie faktury</li>
+</ul>
+</div>
+
+<h3>Błąd: "Nie można pobrać faktury"</h3>
+
+<div class="error-box">
+<strong>Komunikat:</strong> "Błąd podczas pobierania faktury. Spróbuj ponownie później."
+</div>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Odśwież stronę i spróbuj ponownie</li>
+<li>Wyczyść pamięć podręczną przeglądarki</li>
+<li>Spróbuj pobrać fakturę w innym formacie (XML zamiast PDF lub odwrotnie)</li>
+<li>Jeśli problem dotyczy konkretnej faktury, zgłoś do KSeF z podaniem numeru KSeF</li>
+</ul>
+</div>
+
+<h2>Błędy związane z korektami i anulowaniem</h2>
+
+<p>Korekty faktur i ich anulowanie to operacje szczególnie podatne na błędy.</p>
+
+<h3>Błąd: "Nie można anulować faktury"</h3>
+
+<div class="error-box">
+<strong>Komunikat:</strong> "Faktura nie może być anulowana - upłynął termin anulowania lub faktura została już przetworzona."
+</div>
+
+<p>KSeF pozwala na anulowanie faktury tylko przez ograniczony czas i pod określonymi warunkami.</p>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Sprawdź, czy nie upłynął 72-godzinny termin na anulowanie</li>
+<li>Upewnij się, że faktura nie została już pobrana przez odbiorcę</li>
+<li>Jeśli nie możesz anulować, wystaw fakturę korygującą ze stawką 0%</li>
+<li>Skontaktuj się z kontrahentem w sprawie wzajemnego anulowania</li>
+</ul>
+</div>
+
+<h3>Błąd: "Korekta nie może być zarejestrowana"</h3>
+
+<div class="error-box">
+<strong>Komunikat:</strong> "Nie można zarejestrować faktury korygującej - faktura pierwotna nie istnieje lub jest nieprawidłowa."
+</div>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Upewnij się, że numer faktury korygowanej jest identyczny z oryginałem</li>
+<li>Sprawdź, czy faktura pierwotna została poprawnie zarejestrowana w KSeF</li>
+<li>Weryfikuj datę wystawienia korekty - musi być późniejsza niż data pierwotnej</li>
+<li>Upewnij się, że używasz poprawnego typu korekty (korekta vs faktura korygująca)</li>
+</ul>
+</div>
+
+<h2>Problemy z programami księgowymi</h2>
+
+<p>Integracja z zewnętrznymi programami księgowymi wprowadza dodatkową warstwę potencjalnych problemów.</p>
+
+<h3>Błąd synchronizacji z programem księgowym</h3>
+
+<div class="error-box">
+<strong>Objawy:</strong> Faktury wysłane z programu nie pojawiają się w KSeF lub odwrotnie.
+</div>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Upewnij się, że program księgowy jest zaktualizowany do wersji obsługującej KSeF</li>
+<li>Sprawdź konfigurację API w programie (token, endpointy)</li>
+<li>Wyloguj się i zaloguj ponownie w integracji KSeF w programie</li>
+<li>Sprawdź logi błędów w programie księgowym</li>
+<li>Skontaktuj się z supportem dostawcy oprogramowania</li>
+</ul>
+</div>
+
+<h3>Błąd: "Brak połączenia z KSeF"</h3>
+
+<div class="solution-box">
+<strong>Rozwiązania:</strong>
+<ul>
+<li>Sprawdź połączenie internetowe</li>
+<li>Upewnij się, że firewall nie blokuje połączenia z API KSeF</li>
+<li>Weryfikuj, czy nie trwa przerwa techniczna KSeF</li>
+<li>Sprawdź certyfikaty SSL/TLS w systemie</li>
+<li>Uruchom ponownie program księgowy</li>
+</ul>
+</div>
+
+<h2>FAQ - Szybkie odpowiedzi na najczęstsze pytania</h2>
+
+<h3>Czy błędy KSeF są karalne?</h3>
+<p>Nie, same błędy techniczne nie podlegają karom. Ważne jest jednak, aby w przypadku problemów zachować dokumentację prób wysyłki i skontaktować się z KSeF w razie potrzeby. Opóźnienia w wysyłce faktur mogą mieć konsekwencje w relacjach z kontrahentami.</p>
+
+<h3>Gdzie zgłaszać błędy KSeF?</h3>
+<p>Błędy techniczne zgłaszaj przez:
+<ul>
+<li>Formularz kontaktowy na <a href="https://www.podatki.gov.pl/ksef">podatki.gov.pl/ksef</a></li>
+<li>Telefon: 801 055 055 (infolinia KSeF)</li>
+<li>Email: ksef@mf.gov.pl</li>
+</ul>
+</p>
+
+<h3>Jak długo trwa naprawa błędów systemowych?</h3>
+<p>Większość błędów krytycznych jest naprawiana w ciągu 24-48h. W przypadku poważniejszych awarii Ministerstwo Finansów publikuje komunikaty z szacowanym czasem naprawy.</p>
+
+<h3>Czy mog cofnąć wysłaną fakturę?</h3>
+<p>Tak, ale tylko w ciągu 72 godzin od wysłania i pod warunkiem, że odbiorca jej jeszcze nie pobrał. Po tym czasie konieczne jest wystawienie faktury korygującej.</p>
+
+<h2>Checklist - co robić przy błędzie KSeF</h2>
+
+<p>Gdy napotkasz błąd w KSeF, postępuj zgodnie z tą listą:</p>
+
+<ul>
+<li><strong>1. Nie panikuj</strong> - większość błędów ma rozwiązanie</li>
+<li><strong>2. Przeczytaj komunikat</strong> - często zawiera wskazówki</li>
+<li><strong>3. Sprawdź ten artykuł</strong> - znajdź swój błąd w powyższej liście</li>
+<li><strong>4. Spróbuj podstawowych rozwiązań:</strong>
+  <ul>
+  <li>Odśwież stronę (F5)</li>
+  <li>Wyczyść cache przeglądarki</li>
+  <li>Użyj innej przeglądarki</li>
+  <li>Sprawdź połączenie internetowe</li>
+  </ul>
+</li>
+<li><strong>5. Sprawdź status KSeF</strong> - może trwać przerwa techniczna</li>
+<li><strong>6. Zapisz szczegóły błędu</strong> - zrzut ekranu, kod błędu, czas wystąpienia</li>
+<li><strong>7. Skontaktuj się z pomocą</strong> - jeśli problem się powtarza</li>
+</ul>
+
+<h2>Podsumowanie</h2>
+
+<p>Błędy KSeF mogą być frustrujące, szczególnie w początkowym okresie wdrożenia. Pamiętaj jednak, że większość problemów ma znane rozwiązania, a system jest stale udoskonalany przez Ministerstwo Finansów. Kluczem jest zachowanie spokoju, systematyczne sprawdzanie możliwych przyczyn i dokumentowanie problemów.</p>
+
+<p>Jeśli napotkasz błąd, którego nie ma na tej liście, podziel się nim w komentarzu - rozszerzymy ten artykuł o nowe rozwiązania. Wspólna wiedza społeczności przedsiębiorców jest najlepszym narzędziem w radzeniu sobie z wyzwaniami nowego systemu e-faktur.</p>
+
+<div class="warning-box">
+<strong>Pamiętaj:</strong> Ten artykuł ma charakter informacyjny i nie stanowi porady prawnej. W przypadku wątpliwości dotyczących konkretnej sytuacji, skonsultuj się z księgowym lub doradcą podatkowym.
+</div>
+
+        </div>
+        <div class="tags">
+            <span class="tag">ksef-błędy</span> <span class="tag">ksef-problemy</span> <span class="tag">ksef-faq</span> <span class="tag">ksef-api</span> <span class="tag">ksef-logowanie</span> <span class="tag">błędy-faktur</span> <span class="tag">ksef-pomoc</span> 
+        </div>
+    </article>
+    <footer>
+        <p><a href="/ksef-blog/">← Wróć do KSeF Blog</a> | <a href="/ksef-blog/polityka-prywatnosci/">Polityka Prywatności</a></p>
+    </footer>
+</body>
+</html>
