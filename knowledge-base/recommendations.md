@@ -161,26 +161,70 @@ Structured data markup (JSON-LD) that helps search engines understand your FAQ c
 
 ---
 
-## 6. Content Optimization Checklist
+## 6. Emerging SEO/UX Trends (2025-2026)
+
+### AI-Powered Search & Zero-Click Searches
+- **70%+ of searches now end without a click** - optimize for direct answers
+- **Focus on "People Also Ask"** boxes as new SERP real estate
+- **AI Overviews** require even more comprehensive answers
+- **Strategy:** Be the answer, not just a link
+
+### E-E-A-T Evolution (Experience, Expertise, Authoritativeness, Trustworthiness)
+- **First-person experience content** outperforms generic guides
+- **Author bylines** with credentials are critical for YMYL topics (finance = YMYL)
+- **Regular content updates** signal freshness to Google
+- **Citations and sources** build trust signals
+
+### Core Web Vitals & Page Experience
+- **LCP (Largest Contentful Paint):** <2.5s target
+- **INP (Interaction to Next Paint):** <200ms (replaced FID)
+- **CLS (Cumulative Layout Shift):** <0.1
+- **HTTPS + no intrusive interstitials** are baseline requirements
+
+### Voice Search & Conversational Content
+- **20% of mobile queries are voice** - optimize for natural language
+- **Question-based H2s** capture voice search traffic
+- **Short, direct answers** win voice results
+- **Polish language nuances** matter for local voice search
+
+### Topical Authority & Content Clusters
+- **Google rewards depth over breadth** in specific niches
+- **Build 5-7 pillar pages** covering core KSEF topics
+- **Create 20+ supporting articles** per pillar
+- **Internal linking between clusters** establishes authority
+
+### Visual Search & Video Integration
+- **YouTube Shorts** drive significant blog traffic
+- **Featured images** appear in Google Discover
+- **Infographics** get high engagement and backlinks
+- **Step-by-step screenshots** improve time-on-page
+
+---
+
+## 7. Content Optimization Checklist
 
 ### Pre-Publish
 - [ ] Target keyword in title (H1)
 - [ ] Meta description (150-160 characters)
 - [ ] Featured snippet targeting (question in H2)
-- [ ] 3-5 internal links
-- [ ] FAQ section with schema
+- [ ] 3-5 internal links to pillar content
+- [ ] FAQ section with schema markup (JSON-LD)
+- [ ] Author bio with credentials
+- [ ] Published date and last updated date
 - [ ] Mobile-friendly formatting
-- [ ] Images with alt text
+- [ ] Images with alt text in Polish
+- [ ] Related internal links in sidebar/footer
 
 ### Post-Publish
-- [ ] Submit to Google Search Console
-- [ ] Share on social media
-- [ ] Monitor for 30-day performance
-- [ ] Update based on engagement data
+- [ ] Submit URL to Google Search Console
+- [ ] Share on social media (LinkedIn for B2B)
+- [ ] Monitor Search Console for indexing
+- [ ] Track featured snippet rankings weekly
+- [ ] Update within 30 days if no traffic growth
 
 ---
 
-## 7. Key Performance Indicators
+## 8. Key Performance Indicators
 
 | Metric | Target | Measurement Tool |
 |--------|--------|------------------|
@@ -189,16 +233,35 @@ Structured data markup (JSON-LD) that helps search engines understand your FAQ c
 | Average Time on Page | 3+ minutes | Google Analytics |
 | Bounce Rate | <60% | Google Analytics |
 | Backlinks | +5/month | Google Search Console |
+| Core Web Vitals (LCP) | <2.5s | PageSpeed Insights |
+| Core Web Vitals (INP) | <200ms | PageSpeed Insights |
+| FAQ Schema Implemented | 100% on pillar pages | Rich Results Test |
+| Internal Links per Article | 5-8 | Site audit tools |
+| Voice Search Rankings | Top 3 for 5+ queries | AnswerThePublic |
 
 ---
 
-## Recommended Next Steps
+## 9. Recommended Next Steps
 
+### Immediate (This Week)
 1. **Audit existing content** for featured snippet opportunities
-2. **Implement FAQ schema** on top 10 pages
-3. **Create internal linking strategy** document
-4. **Develop 3-month content calendar** based on Polish finance topics
-5. **Set up tracking** for featured snippet rankings
+2. **Implement FAQ schema** on top 10 pages using JSON-LD
+3. **Add author bylines** with credentials to all articles
+4. **Update dates** on all evergreen content
+
+### Short-Term (This Month)
+1. **Create internal linking strategy** document with cluster map
+2. **Develop 3-month content calendar** based on Polish finance topics
+3. **Set up tracking** for featured snippet rankings
+4. **Add FAQ sections** to all pillar pages
+5. **Optimize Core Web Vitals** for underperforming pages
+
+### Medium-Term (Quarter)
+1. **Build 5 pillar pages** for core KSEF topics
+2. **Create 20+ supporting articles** linked to pillars
+3. **Develop video content** (YouTube Shorts) for top 10 articles
+4. **Earn backlinks** from Polish finance/.pl domains
+5. **Implement voice search optimization** for top queries
 
 ---
 
