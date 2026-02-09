@@ -1,0 +1,6 @@
+title: KSeF Blog
+description: Kompletne źródło wiedzy o KSeF
+baseurl: "/ksef-blog"
+url: "https://manfredpasm-crypto.github.io"
+
+markdown: kramdown
